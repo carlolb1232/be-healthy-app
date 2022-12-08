@@ -21,13 +21,13 @@ module.exports.Login = async (req, res) => {
     const user = await User.findOne({ email: req.body.email });
 
     if (user === null) {
-      res.json({ errors: { error: { message: "El usuario no existe en la base de datos" } } })
+      return res.json({ errors: { error: { message: "El usuario no existe en la base de datos" } } })
     }
 
     const correctPassword = await bcrypt.compare(req.body.password, user.password);
 
     if (!correctPassword) {
-      res.json({ errors: { error: { message: "La contraseña es incorrecta" } } })
+      return res.json({ errors: { error: { message: "La contraseña es incorrecta" } } })
     }
 
     const jwtToken = jwt.sign({ id: user._id }, process.env.SECRET_KEY);
