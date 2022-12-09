@@ -20,6 +20,28 @@ const UserSchema = new mongoose.Schema({
     },
     unique: true
   },
+  height:{
+    type: Number,
+    require:[
+      true,
+      "Ingrese una altura"
+    ]
+  },
+  weitght:{
+    type: Number,
+    require:[
+      true,
+      "Ingrese una peso"
+    ]
+  },
+  imc:{
+    type: Number,
+  },
+  periods:[
+    {
+      type: mongoose.Schema.Types.ObjectId, ref: "Period"
+    }
+  ],
   password: {
     type: String,
     required: [true, "Por favor ingresar contraseña"],
