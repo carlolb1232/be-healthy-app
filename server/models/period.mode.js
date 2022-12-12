@@ -26,17 +26,17 @@ const PeriodSchema = new mongoose.Schema(
     imc:{
       type: Number,
     },
-    rutine:[
+    rutines:[
       {
         type: mongoose.Schema.Types.ObjectId, ref: "Excercise"
       }
     ],
-    canEat:[
+    shouldEat:[
       {
         type: mongoose.Schema.Types.ObjectId, ref: "Food"
       }
     ],
-    shouldEat:[
+    canEat:[
       {
         type: mongoose.Schema.Types.ObjectId, ref: "Food"
       }

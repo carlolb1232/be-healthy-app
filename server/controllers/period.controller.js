@@ -30,7 +30,7 @@ module.exports.updateOnePeriodRutines = async (req, res) => {
     const { body } = req;
     const { id } = req.params;
     const period = await Period.findById(id);
-    period.rutine.push(body)
+    period.rutines.push(body)
     period.save()
     res.json({message: "", period: period})
   } catch (err) {

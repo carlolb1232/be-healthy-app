@@ -37,6 +37,12 @@ const UserSchema = new mongoose.Schema({
   imc:{
     type: Number,
   },
+  greesepercent:{
+    type: Number,
+  },
+  caloriespercent:{
+    type: Number,
+  },
   periods:[
     {
       type: mongoose.Schema.Types.ObjectId, ref: "Period"

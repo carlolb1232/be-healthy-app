@@ -9,13 +9,6 @@ const ExcericeSchema = new mongoose.Schema(
         "El nombre del ejercicio "
       ],
     },
-    description:{
-      type: String,
-      required: [
-        true,
-        "El ejercicio requiere de una descripción"
-      ],
-    },
     link:{
       type: String,
     },

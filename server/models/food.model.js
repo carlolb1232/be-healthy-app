@@ -9,6 +9,13 @@ const FoodSchema = new mongoose.Schema(
         "El nombre de la comida"
       ],
     },
+    img:{
+      type: String,
+      required:[
+        true,
+        "Ingrese link de imagen"
+      ]
+    }
   },
   {
     timestamps: true
