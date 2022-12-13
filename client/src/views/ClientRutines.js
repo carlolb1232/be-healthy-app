@@ -9,13 +9,13 @@ const ClientRutines = () => {
 
 
   const { idPeriod } = useParams()
-  const [rutines, setRutines] = useState();
+  const [rutines, setRutines] = useState([1]);
 
   const getRutines = async () => {
     try {
       const response = await simpleGet(`http://localhost:8000/api/rutines/${idPeriod}`);
       console.log(response.data)
-      setRutines(response.data.rutines)
+      // setRutines(response.data.rutines)
     } catch (err) {
       console.log(err)
     }
@@ -44,12 +44,20 @@ const ClientRutines = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Sentadilla</td>
-                  <td>4</td>
-                  <td>12</td>
-                  <td>30</td>
-                </tr>
+                {
+                  rutines.length === 0 ?
+                    <tr>
+                      <td colSpan="4">Solicite rutina a su Coach</td>
+                    </tr>
+                    :
+                    <tr>
+                      <td>Sentadilla</td>
+                      <td>4</td>
+                      <td>12</td>
+                      <td>30</td>
+                    </tr>
+
+                }
               </tbody>
             </table>
       </div>
