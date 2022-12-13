@@ -30,7 +30,7 @@ const MainUserDashboard = () => {
   return (
     <div className={styles.container}>
       <img src={img_dashboard} alt="imagen de dashboard" />
-      <div>
+      <div className={styles.containerRegistros}>
         <h3>Registros mensuales</h3>
         <div>
           <table className="table table-dark">
@@ -39,6 +39,7 @@ const MainUserDashboard = () => {
                 <th>Fecha</th>
                 <th>Peso (Kg)</th>
                 <th>Altura (cm)</th>
+                <th>IMC</th>
                 <th>IMC</th>
                 <th>% grasa</th>
                 <th>Calorías</th>
@@ -61,8 +62,8 @@ const MainUserDashboard = () => {
                     <td>Sobrepeso</td>
                     <td>30</td>
                     <td>1800</td>
-                    <td><button onClick={()=>navigate(`/client-rutines/123`)}>ver</button></td>
-                    <td><button>ver</button></td>
+                    <td><button className={styles.btnVer} onClick={()=>navigate(`/client-rutines/123`)}>ver</button></td>
+                    <td><button className={styles.btnVer} >ver</button></td>
                   </tr>
 
 

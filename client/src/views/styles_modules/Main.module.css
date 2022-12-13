@@ -13,7 +13,7 @@ h1{
   font-weight: 600;
 }
 
-button{
+.btnRegister{
   padding: 12px 40px ;
   background-color: #5E5CE6;
   color: white;

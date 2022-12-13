@@ -27,7 +27,7 @@ const Main = () => {
         <div className={styles.container_main}>
           <h1>Es momento de aumentar <br></br>
             tus capacidades</h1>
-          <button onClick={()=>navigate("/register")}>Comenzar</button>
+          <button className={styles.btnRegister}  onClick={()=>navigate("/register")}>Comenzar</button>
         </div>
       }
       {

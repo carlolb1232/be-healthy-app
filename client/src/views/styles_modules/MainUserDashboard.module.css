@@ -1,4 +1,30 @@
 .container{
   background-color: #1F1F25;
-  color: white !important;
+  height: 100vh;
+
+}
+
+h3{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-family: 'Itim', cursive;
+  color: #BF5AF2;
+
+}
+
+.containerRegistros{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btnVer{
+  padding: 2px 20px ;
+  background-color: #1F1F25;
+  color: white;
+  border: 2px solid #5E5CE6 ;
+  border-radius: 6px;
+  align-self: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
 }
