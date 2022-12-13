@@ -24,7 +24,7 @@ const ClientDiet = () => {
                 <img className={styles.img_card} src={img_recomendado} alt="imagen de logo behealtly"/>
                 <p>Recomendado</p>
               </div>
-              <button className={styles.btnVer} onClick={()=>navigate(`/period-food/${idPeriod}/shouldEat`)}>ver</button>
+              <button className={styles.btnVer} onClick={()=>navigate(`/client-foods-list/${idPeriod}/shouldEat`)}>ver</button>
           </div>
         </div>
 
@@ -34,7 +34,7 @@ const ClientDiet = () => {
                 <img className={styles.img_card} src={img_moderado} alt="imagen de logo behealtly"/>
                 <p>Moderado</p>
               </div>
-              <button className={styles.btnVer} onClick={()=>navigate(`/period-food/${idPeriod}/canEat`)}>ver</button>
+              <button className={styles.btnVer} onClick={()=>navigate(`/client-foods-list/${idPeriod}/canEat`)}>ver</button>
           </div>
         </div>
 
@@ -44,7 +44,7 @@ const ClientDiet = () => {
                 <img className={styles.img_card} src={img_restrictivo} alt="imagen de logo behealtly"/>
                 <p>Restrictivo</p>
               </div>
-              <button className={styles.btnVer} onClick={()=>navigate(`/period-food/${idPeriod}/shouldntEat`)}>ver</button>
+              <button className={styles.btnVer} onClick={()=>navigate(`/client-foods-list/${idPeriod}/shouldntEat`)}>ver</button>
           </div>
         </div>
 
