@@ -13,8 +13,6 @@ const Main = () => {
   const { user, setUser } = useUser();
 
 
-
-
   const logOut = async () => {
     const { success } = await logout();
     if (success) setUser(null)

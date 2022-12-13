@@ -19,7 +19,7 @@ module.exports.getPeriodsFromUser = async(req, res) => {
   try {
     const { idUser } = req.params;
     const user = await User.findById(idUser).populate("periods").exec();
-    res.json({message:"", user:user.periods})
+    res.json({message:"", periods:user.periods})
   } catch (err) {
     res.json({ message: 'Ocurrio un error', errors: err.errors })
   }

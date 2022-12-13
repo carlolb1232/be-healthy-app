@@ -15,6 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 require('./server/routes/user.routes')(app); 
 require('./server/routes/excercise.routes')(app); 
 require('./server/routes/food.routes')(app); 
+require('./server/routes/period.routes')(app); 
+require('./server/routes/rutine.routes')(app); 
 
 app.listen(8000, () => {
     console.log("Servidor Conectado")

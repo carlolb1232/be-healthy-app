@@ -9,6 +9,7 @@ import { useUser } from "./contexts/userContext"
 import Detail from "./views/Detail";
 import Navbar from "./components/Navbar";
 import MainUserDashboard from "./views/MainUserDashboard";
+import ClientRutines from "./views/ClientRutines";
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
           <Route path="/register" element={<Register />}></Route>
 
           {/* CLIENT */}
-          <Route path="/main-client" element={<MainUserDashboard />}></Route>
+          <Route path="/client-rutines/:idPeriod" element={<ClientRutines />}></Route>
 
         </Routes>
       </UserProvider>
