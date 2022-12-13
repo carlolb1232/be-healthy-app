@@ -1,4 +1,4 @@
-const Period = require("../models/period.mode");
+const {Period} = require("../models/period.model");
 const { User } = require("../models/user.model");
 
 
@@ -41,11 +41,22 @@ module.exports.updateOnePeriodRutines = async (req, res) => {
 module.exports.updateOnePeriodDiets = async (req, res) => {
   try {
     const { foods, section } = req.body;
-    const { id } = req.params;
-    const period = await Period.findById(id);
+    const { idPeriod } = req.params;
+    const period = await Period.findById(idPeriod);
     period[`${section}`].push(foods)
     period.save()
     res.json({message: "", period: period})
+  } catch (err) {
+    res.json({ message: 'Ocurrio un error', errors: err.errors })
+  }
+}
+
+module.exports.getFoodsPerSection = async (req, res) => {
+  try {
+    const { idPeriod, section } = req.params;
+    const period = await Period.findById(idPeriod).populate(`${section}`).exec();
+    const foods = period[`${section}`]
+    res.json({message:"", foods:foods})
   } catch (err) {
     res.json({ message: 'Ocurrio un error', errors: err.errors })
   }
