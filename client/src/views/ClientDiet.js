@@ -7,6 +7,7 @@ import img_restrictivo from "../assets/Behealthy_Restrictivo.png"
 import img_diet from "../assets/img_dietaUsuario.png"
 
 const ClientDiet = () => {
+
   const{idPeriod}=useParams()
   const navigate = useNavigate()
   return (
@@ -14,7 +15,7 @@ const ClientDiet = () => {
         <img  src={img_diet} alt="imagen de dieta nutricional" />
         <div className={styles.container_title}>
           <h3>Dieta nutricional</h3>
-          <button className={styles.btnCerrar}>X</button>
+          <button className={styles.btnCerrar} onClick={()=>navigate("/")}>X</button>
         </div>
       <div className={styles.containers}>
         <div className={styles.contenedor}>

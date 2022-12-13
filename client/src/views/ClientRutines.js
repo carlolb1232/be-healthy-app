@@ -1,13 +1,13 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { simpleGet } from '../services/simpleGet';
 import styles from "./styles_modules/ClientRutines.module.css"
 import img_rutina from "../assets/img_rutinaUsuario.png"
 
 const ClientRutines = () => {
 
-
+  const navigate = useNavigate()
   const { idPeriod } = useParams()
   const [rutines, setRutines] = useState([1]);
 
@@ -31,7 +31,7 @@ const ClientRutines = () => {
       <div className={styles.containerRutina}>
         <div className={styles.container_title}>
           <h3 >Rutina</h3>
-          <button className={styles.btnCerrar}>X</button>
+          <button className={styles.btnCerrar} onClick={()=>navigate("/")}>X</button>
         </div>
       </div>
 
