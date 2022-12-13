@@ -48,6 +48,10 @@ const UserSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId, ref: "Period"
     }
   ],
+  rol:{
+    type:String,
+    default:"client"
+  },
   password: {
     type: String,
     required: [true, "Por favor ingresar contraseña"],
@@ -58,7 +62,7 @@ const UserSchema = new mongoose.Schema({
 
 UserSchema.plugin(uniqueValidator, { message: "Error, el correo ya existe" });
 
-//Establecemos el get y el set de la variable confirmPassword, que llega como campo en el body, 
+//Establecemos el get y el set de la variable confirmPassword, que llega como campo en el body,
 //pero no es almacenada en el UserSchema.
 UserSchema.virtual("confirmPassword")
   .get(() => this._confirmPassword)

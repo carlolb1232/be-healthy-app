@@ -8,15 +8,11 @@ import styles from "./styles_modules/Main.module.css"
 
 const Main = () => {
 
+  const navigate = useNavigate();
   const { user, setUser } = useUser();
 
-  const renderInfo = () => {
-    if (user) {
-      return (<>USUARIO LOGGUEADO: {user.firstName} {user.lastName} </>)
-    } else {
-      return (<>NO HAY USUARIO LOGGUEADO</>)
-    }
-  }
+
+
 
   const logOut = async () => {
     const { success } = await logout();
@@ -27,10 +23,10 @@ const Main = () => {
 
   return (
     <div className={styles.container_main}>
-      <h1>ESTE CAMBIO SE HIZO POST DEPLOY</h1>
-      <h2>{renderInfo()} </h2>
-      {user && <button onClick={logOut}>LOGOUT</button>}
-      {user && <Detail></Detail>}
+
+      <h1>Es momento de aumentar <br></br>
+        tus capacidades</h1>
+      <button onClick={()=>navigate("/register")}>Comenzar</button>
     </div>
   );
 }

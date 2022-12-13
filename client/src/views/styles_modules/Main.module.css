@@ -1,7 +1,25 @@
 .container_main{
   height: calc(100vh - 55px );
   width: 100%;
-  background-image: url(../../assets/bg_home2.png);
-  background-size: contain;
+  background-image: url(../../assets/bg_home0.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
+}
+
+h1{
+  color: white;
+  font-size: 48px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+button{
+  padding: 12px 40px ;
+  background-color: #5E5CE6;
+  color: white;
+  border: 1px solid #5E5CE6 ;
+  border-radius: 12px;
+  align-self: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
 }
