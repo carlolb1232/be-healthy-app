@@ -10,6 +10,7 @@ import Detail from "./views/Detail";
 import Navbar from "./components/Navbar";
 import MainUserDashboard from "./views/MainUserDashboard";
 import ClientRutines from "./views/ClientRutines";
+import ClientDiet from "./views/ClientDiet";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
 
           {/* CLIENT */}
           <Route path="/client-rutines/:idPeriod" element={<ClientRutines />}></Route>
+          <Route path="/client-diet/:idPeriod" element={<ClientDiet />}></Route>
 
         </Routes>
       </UserProvider>

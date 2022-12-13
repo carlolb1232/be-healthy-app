@@ -63,7 +63,7 @@ const MainUserDashboard = () => {
                     <td>30</td>
                     <td>1800</td>
                     <td><button className={styles.btnVer} onClick={()=>navigate(`/client-rutines/123`)}>ver</button></td>
-                    <td><button className={styles.btnVer} >ver</button></td>
+                    <td><button className={styles.btnVer} onClick={()=>navigate(`/client-diet/123`)} >ver</button></td>
                   </tr>
 
 
