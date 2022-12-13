@@ -1,4 +1,4 @@
-const { Period } = require("../models/period.mode");
+const { Period } = require("../models/period.model");
 const { Rutine } = require("../models/rutine.model");
 
 

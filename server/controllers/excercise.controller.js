@@ -1,4 +1,4 @@
-const Excercise = require("../models/excercise.model")
+const {Excercise} = require("../models/excercise.model")
 
 
 module.exports.getAllExcercices = async (req, res) => {

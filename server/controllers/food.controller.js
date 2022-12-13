@@ -1,4 +1,4 @@
-const Food = require("../models/food.model")
+const {Food} = require("../models/food.model")
 
 
 module.exports.getAllFoods = async (req, res) => {
