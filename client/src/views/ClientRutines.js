@@ -29,11 +29,13 @@ const ClientRutines = () => {
     <div className={styles.container}>
       <img src={img_rutina} alt="imagen de rutina" />
       <div className={styles.containerRutina}>
-        <div className={styles.rutina}>
+        <div className={styles.container_title}>
           <h3 >Rutina</h3>
           <button className={styles.btnCerrar}>X</button>
         </div>
+      </div>
 
+      <div>
         <table className="table table-dark table-rutina">
               <thead>
                 <tr>
@@ -59,8 +61,10 @@ const ClientRutines = () => {
 
                 }
               </tbody>
-            </table>
+        </table>
       </div>
+
+
     </div>
   );
 }

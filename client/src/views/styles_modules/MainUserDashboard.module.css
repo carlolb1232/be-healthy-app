@@ -1,3 +1,9 @@
+
+img{
+  width: 100%;
+}
+
+
 .container{
   background-color: #1F1F25;
   height: 100vh;
@@ -6,7 +12,7 @@
 
 h3{
   margin-top: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   font-family: 'Itim', cursive;
   text-align: center;
   color: #BF5AF2;
@@ -20,6 +26,11 @@ h3{
   margin: 0 auto;
 
 }
+
+th, td{
+  text-align: center;
+}
+
 
 .btnVer{
   padding: 2px 20px ;

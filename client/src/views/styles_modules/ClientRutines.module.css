@@ -10,9 +10,14 @@
   align-items: center;
 }
 
-.rutina{
+.container_title{
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
   display: flex;
-  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 100px
 }
 
 h3{
@@ -23,10 +28,15 @@ h3{
 }
 
 .btnCerrar{
-  padding: 5px 20px 5px 20px ;
+  width: 40px;
+  height: 25px;
   background-color: #5E5CE6;
   color: white;
+  border:none;
   border-radius: 6px;
-  align-self:flex-end;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  align-self: center;
 
 }
