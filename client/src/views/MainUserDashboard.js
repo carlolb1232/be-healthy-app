@@ -33,7 +33,7 @@ const MainUserDashboard = () => {
       <div className={styles.containerRegistros}>
         <h3>Registros mensuales</h3>
         <div>
-          <table className="table table-dark">
+          <table className="table table-dark table_dashboard">
             <thead>
               <tr>
                 <th>Fecha</th>

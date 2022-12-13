@@ -5,9 +5,21 @@
 
 }
 
-button{
-  padding: 5px, 20px, 5px, 20px;
+/* VISTA DASHBOARD USER */
+.table_dashboard{
+  margin: 0 auto;
+  max-width: 1000px;
+  font-family: 'Inter', sans-serif;
 }
+
+/* VISTA RUTINA USER */
+.table-rutina{
+  margin: 0 auto;
+  max-width: 1000px;
+  font-family: 'Inter', sans-serif;
+}
+
+
 
 
 @media (prefers-reduced-motion: no-preference) {

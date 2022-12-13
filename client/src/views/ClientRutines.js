@@ -34,7 +34,7 @@ const ClientRutines = () => {
           <button className={styles.btnCerrar}>X</button>
         </div>
 
-        <table className="table table-dark">
+        <table className="table table-dark table-rutina">
               <thead>
                 <tr>
                   <th>Ejercicios</th>

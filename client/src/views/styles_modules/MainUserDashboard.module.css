@@ -8,6 +8,7 @@ h3{
   margin-top: 50px;
   margin-bottom: 30px;
   font-family: 'Itim', cursive;
+  text-align: center;
   color: #BF5AF2;
 
 }
@@ -15,7 +16,9 @@ h3{
 .containerRegistros{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+
 }
 
 .btnVer{
