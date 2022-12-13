@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import logout from '../services/logout';
 import Detail from './Detail';
 import styles from "./styles_modules/Main.module.css"
+import MainUserDashboard from './MainUserDashboard';
 
 
 const Main = () => {
@@ -22,11 +23,19 @@ const Main = () => {
 
 
   return (
-    <div className={styles.container_main}>
-
-      <h1>Es momento de aumentar <br></br>
-        tus capacidades</h1>
-      <button onClick={()=>navigate("/register")}>Comenzar</button>
+    <div>
+      {
+        !user&&
+        <div className={styles.container_main}>
+          <h1>Es momento de aumentar <br></br>
+            tus capacidades</h1>
+          <button onClick={()=>navigate("/register")}>Comenzar</button>
+        </div>
+      }
+      {
+        user&&
+        <MainUserDashboard />
+      }
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { useUser } from "../contexts/userContext"
 import { simpleGetAuthenticated } from '../services/simpleGetAuthenticated';
 import img_login from "../assets/img_login.png"
 import styles from "./styles_modules/Login.module.css"
+import { simpleGet } from '../services/simpleGet';
 
 const Login = () => {
 
@@ -14,11 +15,11 @@ const Login = () => {
   const { setUser } = useUser();
 
   const loginUsuario = async (values) => {
-    const response = await simplePost("/api/login", values)
+    const response = await simplePost("http://localhost:8000/api/login", values)
 
     if (response.data.message === "") {
       console.log("USUARIO LOGUEADO", response.data)
-      const response2 = await simpleGetAuthenticated(`/api/user/${response.data._id}`)
+      const response2 = await simpleGet(`http://localhost:8000/api/user/${response.data._id}`)
       setUser(response2.data);
       navigate("/")
     } else {

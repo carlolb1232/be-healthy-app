@@ -8,6 +8,6 @@ module.exports = function(app){
     app.post("/api/logout",UserController.Logout);
 
     //ENDPOINTS QUE NECESITAN AUTENTICACION
-    app.get("/api/users",authenticate, UserController.getAll);
-    app.get("/api/user/:id",authenticate,UserController.getUser)
+    app.get("/api/users", UserController.getAll);
+    app.get("/api/user/:id",UserController.getUser)
 }

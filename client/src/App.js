@@ -8,6 +8,7 @@ import { UserProvider } from "./contexts/userContext";
 import { useUser } from "./contexts/userContext"
 import Detail from "./views/Detail";
 import Navbar from "./components/Navbar";
+import MainUserDashboard from "./views/MainUserDashboard";
 
 function App() {
 
@@ -21,6 +22,10 @@ function App() {
           <Route path="/" element={<Main></Main>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/register" element={<Register />}></Route>
+
+          {/* CLIENT */}
+          <Route path="/main-client" element={<MainUserDashboard />}></Route>
+
         </Routes>
       </UserProvider>
     </div>

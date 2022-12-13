@@ -6,6 +6,9 @@ const MainUserDashboard = () => {
   return (
     <div>
       <img src={img_dashboard} alt="imagen de dashboard" />
+      <h1>
+        MAIN CLIENTE
+      </h1>
     </div>
   );
 }
