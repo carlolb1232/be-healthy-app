@@ -12,8 +12,10 @@ const Navbar = () => {
 
   const logOut = async () => {
     const { success } = await logout();
-    if (success) setUser(null)
-    else window.alert("Error. No se pude desloguear")
+    if(success){
+      setUser(null)
+      navigate("/")
+    }else window.alert("Error. No se pude desloguear")
   }
 
   return (

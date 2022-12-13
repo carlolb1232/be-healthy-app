@@ -51,7 +51,7 @@ const MainUserDashboard = () => {
               {
                 periods.length === 0?
                   <tr>
-                    <td colspan="8">AGENDAR UNA CITA</td>
+                    <td colspan="100%">AGENDAR UNA CITA</td>
                   </tr>
                 :
                   <tr>
