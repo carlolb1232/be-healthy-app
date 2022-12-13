@@ -7,24 +7,15 @@ import Register from "./views/Register";
 import { UserProvider } from "./contexts/userContext";
 import { useUser } from "./contexts/userContext"
 import Detail from "./views/Detail";
+import Navbar from "./components/Navbar";
 
 function App() {
 
   return (
     <div className="App">
       <UserProvider>
-        <ul>
-          <li>
-            <Link to="/">MAIN</Link>
-          </li>
-          <li>
-            <Link to="/login">LOGIN</Link>
-          </li>
-          <li>
-            <Link to="/register">REGISTRO</Link>
-          </li>
+        <Navbar />
 
-        </ul>
 
         <Routes>
           <Route path="/" element={<Main></Main>}></Route>

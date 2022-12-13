@@ -1,6 +1,8 @@
 import React from 'react';
 import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
+import styles from "../views/styles_modules/Register.module.css"
+
 
 const RegisterForm = (props) => {
 
@@ -56,10 +58,10 @@ const RegisterForm = (props) => {
         }) => {
           return (
             <div>
-              <h1>REGISTRO</h1>
+
               <Form className="contact" method="post" onSubmit={handleSubmit}>
                 <label htmlFor="firstName" className="col-sm-2 col-form-label">Nombre</label>
-                <Field id='firstName' type="text" className="form-control" placeholder="Nombre" name='firstName' />
+                <Field id='firstName' type="text" className="form-control " placeholder="Nombre" name='firstName' />
                 {errors.firstName && touched.firstName && <p>{errors.firstName}</p>}
 
                 <label htmlFor="lastName" className="col-sm-2 col-form-label">Apellido</label>
@@ -78,7 +80,7 @@ const RegisterForm = (props) => {
                 <Field id='confirmPassword' type="password" placeholder="Confirmar Contraseña" className="form-control" name='confirmPassword' />
                 {errors.confirmPassword && touched.confirmPassword && <p>{errors.confirmPassword}</p>}
                 <br></br>
-                <button type="submit" disabled={Object.values(errors).length > 0}>Registrarse</button>
+                <button type="submit" className={styles.btn_register} disabled={Object.values(errors).length > 0}>Registrarse</button>
               </Form>
             </div>
           );

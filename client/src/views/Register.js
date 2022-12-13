@@ -4,6 +4,8 @@ import RegisterForm from '../components/RegisterForm';
 import { simplePost } from '../services/simplePost';
 import { useUser } from "../contexts/userContext"
 import { simpleGetAuthenticated } from '../services/simpleGetAuthenticated';
+import img_register from "../assets/img_register.png"
+import styles from "./styles_modules/Register.module.css"
 
 const Register = () => {
 
@@ -33,9 +35,12 @@ const Register = () => {
 
 
   return (
-    <div>
-      {errors.map((err, index) => <div className="alert alert-danger" role="alert" key={index}>{err}</div>)}
-      <RegisterForm firstName="" lastName="" email="" password="" confirmPassword="" onSubmitProp={registrarUsuario} ></RegisterForm>
+    <div className={styles.container_register}>
+      <img src={img_register} alt="imagen de registro" />
+      <div className={styles.container_registerForm}>
+        {errors.map((err, index) => <div className="alert alert-danger" role="alert" key={index}>{err}</div>)}
+        <RegisterForm firstName="" lastName="" email="" password="" confirmPassword="" onSubmitProp={registrarUsuario} ></RegisterForm>
+      </div>
     </div>
   );
 }

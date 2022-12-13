@@ -1,0 +1,29 @@
+img{
+  object-fit: cover;
+
+}
+
+.container_login{
+  display: flex;
+  max-height: calc(100vh - 55px );
+  background-color: #1F1F25;
+  color:white
+}
+
+.container_loginForm{
+  min-width: 40%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.btn_login{
+  padding: 5px 20px 5px 20px ;
+  background-color: #5E5CE6;
+  color: white;
+  border: 1px solid #000000  ;
+  border-radius: 6px;
+  align-self: center !important;
+}

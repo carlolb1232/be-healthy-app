@@ -3,6 +3,7 @@ import { useUser } from "../contexts/userContext"
 import { useNavigate } from 'react-router-dom';
 import logout from '../services/logout';
 import Detail from './Detail';
+import styles from "./styles_modules/Main.module.css"
 
 
 const Main = () => {
@@ -25,7 +26,7 @@ const Main = () => {
 
 
   return (
-    <div>
+    <div className={styles.container_main}>
       <h1>ESTE CAMBIO SE HIZO POST DEPLOY</h1>
       <h2>{renderInfo()} </h2>
       {user && <button onClick={logOut}>LOGOUT</button>}

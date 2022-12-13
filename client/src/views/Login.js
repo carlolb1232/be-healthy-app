@@ -4,6 +4,8 @@ import LoginForm from '../components/LoginForm';
 import { simplePost } from '../services/simplePost';
 import { useUser } from "../contexts/userContext"
 import { simpleGetAuthenticated } from '../services/simpleGetAuthenticated';
+import img_login from "../assets/img_login.png"
+import styles from "./styles_modules/Login.module.css"
 
 const Login = () => {
 
@@ -32,9 +34,12 @@ const Login = () => {
 
 
   return (
-    <div>
-      {errors.map((err, index) => <div className={`alert alert-danger`} role="alert" key={index}>{err}</div>)}
-      <LoginForm onSubmitProp={loginUsuario} ></LoginForm>
+    <div className={styles.container_login}>
+      <img src={img_login} alt="imagen de login" />
+      <div className={styles.container_loginForm}>
+        {errors.map((err, index) => <div className={`alert alert-danger`} role="alert" key={index}>{err}</div>)}
+        <LoginForm onSubmitProp={loginUsuario} ></LoginForm>
+      </div>
     </div>
   );
 }

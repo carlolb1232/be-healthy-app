@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import styles from "../views/styles_modules/Login.module.css"
 
 const LoginForm = (props) => {
 
@@ -39,7 +40,6 @@ const LoginForm = (props) => {
         }) => {
           return (
             <div>
-              <h1>LOGIN</h1>
               <Form className="contact" method="post" onSubmit={handleSubmit}>
                 <label htmlFor="email" className="col-form-label">Correo Electrónico</label>
                 <Field id='email' type="text" placeholder="Email" className={`form-control`} name='email' />
@@ -49,7 +49,7 @@ const LoginForm = (props) => {
                 <Field id='password' type="password" placeholder="Contraseña" className={`form-control`} name='password' />
                 {errors.password && touched.password && <p>{errors.password}</p>}
                 <br></br>
-                <button type="submit" disabled={Object.values(errors).length > 0}>Login</button>
+                <button className={styles.btn_login} type="submit" disabled={Object.values(errors).length > 0}>Login</button>
               </Form>
             </div>
           );
