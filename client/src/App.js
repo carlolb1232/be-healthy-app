@@ -29,7 +29,7 @@ function App() {
           <Route path="/register" element={<Register />}></Route>
 
           {/* CLIENT */}
-          <Route path="/client-rutines/:idPeriod" element={<ClientRutines />}></Route>
+          <Route path="/client-rutines/:idPeriod/:idUser" element={<ClientRutines />}></Route>
           <Route path="/client-diet/:idPeriod" element={<ClientDiet />}></Route>
           <Route path="/client-foods-list/:idPeriod/:section" element={<DietList />}></Route>
 

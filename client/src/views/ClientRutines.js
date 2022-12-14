@@ -4,12 +4,17 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { simpleGet } from '../services/simpleGet';
 import styles from "./styles_modules/ClientRutines.module.css"
 import img_rutina from "../assets/img_rutinaUsuario.png"
+import { useUser } from "../contexts/userContext"
 
 const ClientRutines = () => {
 
+  const { user, setUser } = useUser();
+
+
   const navigate = useNavigate()
-  const { idPeriod } = useParams()
+  const { idPeriod, idUser } = useParams()
   const [rutines, setRutines] = useState([1]);
+  const [client, setClient] = useState();
 
   const getRutines = async () => {
     try {
@@ -21,13 +26,39 @@ const ClientRutines = () => {
     }
   }
 
+  const getClient = async () => {
+    try {
+      const response = await simpleGet(`http://localhost:8000/api/user/${idUser}`)
+      console.log("user", response.data)
+      setClient(response.data)
+    } catch (err) {
+
+    }
+  }
+
   useEffect(() => {
     getRutines();
+    getClient()
   }, []);
 
   return (
     <div className={styles.container}>
       <img src={img_rutina} alt="imagen de rutina" />
+      {
+        user.rol==="admin"&&
+          <div className="admin-area">
+            <div className="client-data">
+              <p>{client?.firstName}</p>
+              <p>{client?.lastName}</p>
+              <p>{client?.height}</p>
+              <p>{client?.weight}</p>
+              <p>{client?.imc}</p>
+            </div>
+            <div className="create-rutine-form">
+
+            </div>
+          </div>
+      }
       <div className={styles.containerRutina}>
         <div className={styles.container_title}>
           <h3 className={styles.title}>Rutina</h3>

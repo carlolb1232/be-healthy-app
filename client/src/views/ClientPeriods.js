@@ -71,7 +71,7 @@ const ClientPeriods = () => {
                   <td>{period.height}</td>
                   <td>{period.imc}</td>
                   <td>{period.imc}</td>
-                  <td><button className="btn btn-primary">crear</button></td>
+                  <td><button className="btn btn-primary" onClick={()=>navigate(`/client-rutines/${period._id}/${idUser}`)}>crear</button></td>
                   <td><button className="btn btn-primary">crear</button></td>
                 </tr>
               )
