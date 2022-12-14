@@ -5,6 +5,7 @@ import logout from '../services/logout';
 import Detail from './Detail';
 import styles from "./styles_modules/Main.module.css"
 import MainUserDashboard from './MainUserDashboard';
+import ClientsList from './ClientsList';
 
 
 const Main = () => {
@@ -31,8 +32,12 @@ const Main = () => {
         </div>
       }
       {
-        user&&
+        user && user.rol==="client"&&
         <MainUserDashboard />
+      }
+      {
+        user && user.rol==="admin"&&
+        <ClientsList />
       }
     </div>
   );

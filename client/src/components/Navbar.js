@@ -24,8 +24,13 @@ const Navbar = () => {
         <div className={styles.Navbar_container}>
           <img className={styles.logo} src={logo} onClick={()=>navigate("/")} alt="logo Behealthy" />
           <div className={styles.container_btns}>
-            <button className={styles.btn_register} onClick={()=>navigate("/register")}>Register</button>
-            <button className={styles.btn_login} onClick={()=>navigate("/login")}>Login</button>
+            {
+              !user&&
+              <>
+                <button className={styles.btn_register} onClick={()=>navigate("/register")}>Register</button>
+                <button className={styles.btn_login} onClick={()=>navigate("/login")}>Login</button>
+              </>
+            }
             {
               user&&
               <button className={styles.btn_login} onClick={logOut}>LogOut</button>
