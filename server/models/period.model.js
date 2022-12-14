@@ -16,7 +16,7 @@ const PeriodSchema = new mongoose.Schema(
         "Ingrese una altura"
       ]
     },
-    weitght:{
+    weight:{
       type: Number,
       require:[
         true,

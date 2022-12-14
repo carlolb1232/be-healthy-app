@@ -58,9 +58,20 @@ module.exports.getAll = (request, response) => {
 module.exports.getUser = async (req, res) => {
   try {
     const { id } = req.params
-    const { email, firstName, lastName, _id, rol } = await User.findById(id).exec();
-    res.json({ email, firstName, lastName, _id, rol })
+    const { email, firstName, lastName, _id, rol, periods } = await User.findById(id).exec();
+    res.json({ email, firstName, lastName, _id, rol, periods })
   } catch (err) {
     return { success: false, data: err.message }
+  }
+}
+
+module.exports.updateUser = async (req, res) => {
+  try {
+    const {id} = req.params
+    const {body} = req
+    const user = await User.findByIdAndUpdate(id,body,{new:true})
+    res.json({message:"", user:user})
+  } catch (err) {
+    res.json({ message: 'Ocurrio un error', errors: err.errors })
   }
 }

@@ -27,7 +27,7 @@ const UserSchema = new mongoose.Schema({
       "Ingrese una altura"
     ]
   },
-  weitght:{
+  weight:{
     type: Number,
     require:[
       true,
@@ -40,7 +40,7 @@ const UserSchema = new mongoose.Schema({
   greesepercent:{
     type: Number,
   },
-  caloriespercent:{
+  calories:{
     type: Number,
   },
   periods:[

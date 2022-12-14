@@ -10,4 +10,5 @@ module.exports = function(app){
     //ENDPOINTS QUE NECESITAN AUTENTICACION
     app.get("/api/users", UserController.getAll);
     app.get("/api/user/:id",UserController.getUser)
+    app.put("/api/user/:id",UserController.updateUser)
 }
