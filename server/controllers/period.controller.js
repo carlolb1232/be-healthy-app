@@ -4,8 +4,8 @@ const { User } = require("../models/user.model");
 
 module.exports.createOnePeriod = async(req, res) => {
   try {
-    const { date, height, weight, imc, idUser} = req.body
-    const period = await Period.create({date, height, weight, imc});
+    const { date, height, weight, imc, greesepercent, calories, idUser} = req.body
+    const period = await Period.create({date, height, weight, imc, greesepercent, calories});
     const user = await User.findById(idUser);
     user.periods.push(period)
     user.save()

@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const MainUserDashboard = () => {
 
   const { user, setUser } = useUser();
-  const [periods, setPeriods] = useState([1]);
+  const [periods, setPeriods] = useState([]);
   const navigate = useNavigate()
 
   const getPeriodsFromUser = async () => {
@@ -17,7 +17,7 @@ const MainUserDashboard = () => {
       console.log(user._id)
       const response = await simpleGet(`http://localhost:8000/api/periods-user/${user._id}`)
       console.log(response.data)
-      // setPeriods(response.data.periods)
+      setPeriods(response.data.periods)
     } catch (err) {
       console.log(err)
     }
@@ -51,22 +51,24 @@ const MainUserDashboard = () => {
               {
                 periods.length === 0?
                   <tr>
-                    <td colspan="100%">AGENDAR UNA CITA</td>
+                    <td colSpan="100%">AGENDAR UNA CITA</td>
                   </tr>
                 :
+                periods.map(period=>{
+                  return(
                   <tr>
-                    <td>02/01/2022</td>
-                    <td>74</td>
-                    <td>170</td>
-                    <td>22.5</td>
-                    <td>Sobrepeso</td>
-                    <td>30</td>
-                    <td>1800</td>
-                    <td><button className={styles.btnVer} onClick={()=>navigate(`/client-rutines/123/${user._id}`)}>ver</button></td>
-                    <td><button className={styles.btnVer} onClick={()=>navigate(`/client-diet/123`)} >ver</button></td>
+                    <td>{period.date}</td>
+                    <td>{period.weight}</td>
+                    <td>{period.height}</td>
+                    <td>{period.imc}</td>
+                    <td>{period.imc}</td>
+                    <td>{period.greesepercent}</td>
+                    <td>{period.calories}</td>
+                    <td><button className={styles.btnVer} onClick={()=>navigate(`/client-rutines/${period._id}/${user._id}`)}>ver</button></td>
+                    <td><button className={styles.btnVer} onClick={()=>navigate(`/client-diet/${period._id}`)} >ver</button></td>
                   </tr>
-
-
+                  )
+                })
               }
             </tbody>
           </table>

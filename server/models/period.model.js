@@ -26,9 +26,15 @@ const PeriodSchema = new mongoose.Schema(
     imc:{
       type: Number,
     },
+    greesepercent:{
+      type: Number,
+    },
+    calories:{
+      type: Number,
+    },
     rutines:[
       {
-        type: mongoose.Schema.Types.ObjectId, ref: "Excercise"
+        type: mongoose.Schema.Types.ObjectId, ref: "Rutine"
       }
     ],
     shouldEat:[

@@ -15,14 +15,14 @@ const ClientRutines = () => {
   const navigate = useNavigate()
 
   const { idPeriod, idUser } = useParams()
-  const [rutines, setRutines] = useState([1]);
+  const [rutines, setRutines] = useState([]);
   const [client, setClient] = useState();
 
   const getRutines = async () => {
     try {
       const response = await simpleGet(`http://localhost:8000/api/rutines/${idPeriod}`);
-      console.log(response.data)
-      // setRutines(response.data.rutines)
+      console.log(response.data.rutines)
+      setRutines(response.data.rutines)
     } catch (err) {
       console.log(err)
     }
@@ -43,12 +43,18 @@ const ClientRutines = () => {
     getClient()
   }, []);
 
+  useEffect(() => {
+    rutines&&
+    console.log(rutines)
+  }, [rutines]);
+
   const createRutine = async (values) => {
     try {
       values.idPeriod = idPeriod
       console.log("newvaluies",values)
       const response = await simplePost(`http://localhost:8000/api/rutines`, values)
-      console.log(response.data)
+      console.log(response.data.rutine)
+      getRutines()
     } catch (err) {
       console.log(err)
     }
@@ -68,7 +74,7 @@ const ClientRutines = () => {
               <p>{client?.imc}</p>
             </div>
             <div className="create-rutine-form">
-              <button className='btn btn-primary' onClick={()=>navigate("/create-excercise")} >AGREGAR RUTINA</button>
+              <button className='btn btn-primary' onClick={()=>navigate("/create-excercise")} >AGREGAR EJERCICIO</button>
             </div>
             <RutineForm onSubmitProp={createRutine} />
           </div>
@@ -88,21 +94,27 @@ const ClientRutines = () => {
                   <th>Series</th>
                   <th>Repeticiones</th>
                   <th>Descansos(sg)</th>
+                  <th>Ejemplo</th>
                 </tr>
               </thead>
               <tbody>
                 {
                   rutines.length === 0 ?
                     <tr>
-                      <td colSpan="4">Solicite rutina a su Coach</td>
+                      <td colSpan="100%">Solicite rutina a su Coach</td>
                     </tr>
                     :
-                    <tr>
-                      <td>Sentadilla</td>
-                      <td>4</td>
-                      <td>12</td>
-                      <td>30</td>
-                    </tr>
+                    rutines?.map(rutine=>{
+                      return(
+                      <tr key={rutine?._id}>
+                        <td>{rutine?.excercise?.name}</td>
+                        <td>{rutine?.series}</td>
+                        <td>{rutine?.reps}</td>
+                        <td>{rutine?.series}</td>
+                        <td><a className='btn btn-primary' href={rutine?.excercise?.link} target="_blank">VER</a></td>
+                      </tr>
+                      )
+                    })
 
                 }
               </tbody>

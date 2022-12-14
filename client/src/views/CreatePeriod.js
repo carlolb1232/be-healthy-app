@@ -24,6 +24,8 @@ const CreatePeriod = () => {
         height: response.data.user.height,
         weight: response.data.user.weight,
         imc: response.data.user.imc,
+        greesepercent: values.greesepercent,
+        calories: values.calories,
         idUser: idUser
       }
       createPeriod(data)
