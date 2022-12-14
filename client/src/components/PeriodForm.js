@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import styles from "./PeriodForm.module.css"
 
 
 const PeriodForm = (props) => {
@@ -46,8 +47,8 @@ const PeriodForm = (props) => {
         }) => {
           return (
             <div>
-              <Form onSubmit={handleSubmit}>
-                
+              <Form className={styles.container_form} onSubmit={handleSubmit}>
+
                 <label htmlFor="weight" className="col-form-label">Peso</label>
                 <Field id='weight' type="number" placeholder="weight" className={`form-control`} name='weight' />
                 {errors.weight && touched.weight && <p>{errors.weight}</p>}
@@ -69,7 +70,7 @@ const PeriodForm = (props) => {
                 {errors.calories && touched.calories && <p>{errors.calories}</p>}
 
                 <br></br>
-                <button className="btn btn-primary" type="submit" disabled={Object.values(errors).length > 0}>Enviar</button>
+                <button className={styles.btn_enviar} type="submit" disabled={Object.values(errors).length > 0}>Enviar</button>
               </Form>
             </div>
           );

@@ -1,5 +1,6 @@
 .container{
-  height: calc(100vh - 55px );
+  /* height: calc(100vh - 55px ); */
+  height: 100vh;
   background-color: #1F1F25;
 }
 
@@ -9,7 +10,7 @@
   max-width: 800px;
   border-radius: 6px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 40px;
   background-color: #d9d9d910;
   display: flex;
   flex-direction: column;
@@ -18,6 +19,7 @@
 }
 
 .title{
+  margin-top:30px ;
   font-family: 'Inter', sans-serif;
   font-size: 20px;
   color: white;
@@ -25,4 +27,27 @@
 
 .container_form{
   color:white;
+}
+
+.container_title{
+  display: flex;
+}
+
+.btnCerrar{
+  width: 40px;
+  height: 25px;
+  background-color: #5E5CE6;
+  color: white;
+  border:none;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  align-self: center;
+
+}
+
+PeriodForm{
+  padding-bottom: 30px;
+  margin-bottom: 30px;
 }

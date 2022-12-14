@@ -8,7 +8,9 @@ import { simplePost } from '../services/simplePost';
 import styles from "./styles_modules/CreatePeriod.module.css"
 import img_evaluacion from "../assets/img_evaluacionNutricional.png"
 
+
 const CreatePeriod = () => {
+
 
   const { idUser } = useParams();
   const navigate = useNavigate()
@@ -49,12 +51,13 @@ const CreatePeriod = () => {
       <img  src={img_evaluacion} alt="imagen de evaluacion nutricional" />
       <div className={styles.container_background}>
         <div className={styles.container_form}>
-          <h3 className={styles.title}>Evaluación nutricional</h3>
+          <div className={styles.container_title}>
+            <h3 className={styles.title}>Evaluación nutricional</h3>
+            <button className={styles.btnCerrar} onClick={()=>navigate("/client-periods/")}>X</button>
+          </div>
           <PeriodForm onSubmitProp={updateUser}/>
         </div>
       </div>
-      <h1>aquí se crea el formulario</h1>
-      {/* ESTE FORMULARIO ES PARA CREAR UN PERIODO */}
     </div>
   );
 }
