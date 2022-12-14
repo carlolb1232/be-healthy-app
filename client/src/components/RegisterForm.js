@@ -6,7 +6,7 @@ import styles from "../views/styles_modules/Register.module.css"
 
 const RegisterForm = (props) => {
 
-  const { firstName, lastName, email, password, confirmPassword, onSubmitProp } = props;
+  const { firstName, lastName, email, age, password, confirmPassword, onSubmitProp } = props;
 
   return (
     <div >
@@ -15,6 +15,7 @@ const RegisterForm = (props) => {
           firstName: firstName,
           lastName: lastName,
           email: email,
+          age: age,
           password: password,
           confirmPassword: confirmPassword,
         }}
@@ -31,6 +32,9 @@ const RegisterForm = (props) => {
             .email("Correo no valido")
             .min(3, "Este correo electrónico es incorrecto")
             .required("Por favor, ingresa un correo electrónico válido"),
+
+          age: Yup.number()
+            .required("Ingrese una edad"),
 
           password: Yup.string()
             .equals([Yup.ref('confirmPassword'), null], "las contraseñas no son iguales")
@@ -71,6 +75,10 @@ const RegisterForm = (props) => {
                 <label htmlFor="email" className="col-form-label">Correo Electrónico</label>
                 <Field id='email' type="text" placeholder="Email" className="form-control" name='email' />
                 {errors.email && touched.email && <p>{errors.email}</p>}
+
+                <label htmlFor="age" className="col-form-label">Edad</label>
+                <Field id='age' type="number" placeholder="Edad" className="form-control" name='age' />
+                {errors.age && touched.age && <p>{errors.age}</p>}
 
                 <label htmlFor="password" className="col-sm-2 col-form-label">Contraseña</label>
                 <Field id='password' type="password" placeholder="Contraseña" className="form-control" name='password' />

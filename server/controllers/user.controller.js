@@ -58,8 +58,8 @@ module.exports.getAll = (request, response) => {
 module.exports.getUser = async (req, res) => {
   try {
     const { id } = req.params
-    const { email, firstName, lastName, _id, rol, periods, weight, height, imc } = await User.findById(id).exec();
-    res.json({ email, firstName, lastName, _id, rol, periods, weight, height, imc })
+    const { email, firstName, lastName, _id, rol, periods, weight, height, imc, age } = await User.findById(id).exec();
+    res.json({ email, firstName, lastName, _id, rol, periods, weight, height, imc, age })
   } catch (err) {
     return { success: false, data: err.message }
   }
