@@ -30,14 +30,14 @@ const ClientsList = () => {
     <div className={styles.container}>
       <div className={styles.container_background}>
         <h3 className={styles.title}>Instructor de </h3>
-        <hr />
+         <hr className={styles.hr}></hr>
         <div>
           {
             users?.map(user=>{
               return(
                 // Ese boton tiene la ruta para enviar a la lista de periodos de un cliente
                 <div className={styles.container_user}>
-                  <p className={styles.user_name}>{user.firstName}</p>
+                  <p className={styles.user_name}>{user.firstName}{" "}{user.lastName} </p>
                   <button onClick={()=>navigate(`/client-periods/${user._id}`)} className={styles.btn_user}>ver</button>
                 </div>
               )
