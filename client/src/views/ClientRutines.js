@@ -65,18 +65,22 @@ const ClientRutines = () => {
       <img src={img_rutina} alt="imagen de rutina" />
       {
         user.rol==="admin"&&
-          <div className="admin-area">
-            <div className="client-data">
+          <div className={styles.container}>
+            <div className={styles.data_client}>
               <p>{client?.firstName}</p>
               <p>{client?.lastName}</p>
+              <p>{client?.age}</p>
               <p>{client?.height}</p>
               <p>{client?.weight}</p>
               <p>{client?.imc}</p>
             </div>
-            <div className="create-rutine-form">
-              <button className='btn btn-primary' onClick={()=>navigate("/create-excercise")} >AGREGAR EJERCICIO</button>
+            <div className={styles.contain_background}>
+              <div className={styles.contain_rutine}>
+                <h4 className={styles.title}>Agregar rutina de ejercicio</h4>
+                <button className={styles.btn_createRutina} onClick={()=>navigate("/create-excercise")} >Agregar Ejercicio</button>
+              </div>
+              <RutineForm onSubmitProp={createRutine} />
             </div>
-            <RutineForm onSubmitProp={createRutine} />
           </div>
       }
       <div className={styles.containerRutina}>
