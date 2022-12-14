@@ -14,6 +14,7 @@ import ClientDiet from "./views/ClientDiet";
 import DietList from "./views/DietList";
 import ClientPeriods from "./views/ClientPeriods";
 import CreatePeriod from "./views/CreatePeriod";
+import CreateExcercise from "./views/CreateExcercise";
 
 function App() {
 
@@ -39,6 +40,8 @@ function App() {
           <Route path="/client-periods/:idUser" element={<ClientPeriods />} />
           {/* ESTA VISTA ES PARA CREAR UN PERIODO */}
           <Route path="/create-period/:idUser" element={<CreatePeriod />} />
+          {/* ESTA VISTA ES PARA CREAR EJERCICIOS */}
+          <Route path="/create-excercise" element={<CreateExcercise />} />
 
         </Routes>
       </UserProvider>

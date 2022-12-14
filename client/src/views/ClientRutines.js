@@ -5,13 +5,15 @@ import { simpleGet } from '../services/simpleGet';
 import styles from "./styles_modules/ClientRutines.module.css"
 import img_rutina from "../assets/img_rutinaUsuario.png"
 import { useUser } from "../contexts/userContext"
+import RutineForm from '../components/RutineForm';
+import { simplePost } from '../services/simplePost';
 
 const ClientRutines = () => {
 
   const { user, setUser } = useUser();
 
-
   const navigate = useNavigate()
+
   const { idPeriod, idUser } = useParams()
   const [rutines, setRutines] = useState([1]);
   const [client, setClient] = useState();
@@ -32,7 +34,7 @@ const ClientRutines = () => {
       console.log("user", response.data)
       setClient(response.data)
     } catch (err) {
-
+      console.log(err)
     }
   }
 
@@ -40,6 +42,17 @@ const ClientRutines = () => {
     getRutines();
     getClient()
   }, []);
+
+  const createRutine = async (values) => {
+    try {
+      values.idPeriod = idPeriod
+      console.log("newvaluies",values)
+      const response = await simplePost(`http://localhost:8000/api/rutines`, values)
+      console.log(response.data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -55,8 +68,9 @@ const ClientRutines = () => {
               <p>{client?.imc}</p>
             </div>
             <div className="create-rutine-form">
-
+              <button className='btn btn-primary' onClick={()=>navigate("/create-excercise")} >AGREGAR RUTINA</button>
             </div>
+            <RutineForm onSubmitProp={createRutine} />
           </div>
       }
       <div className={styles.containerRutina}>

@@ -8,6 +8,7 @@ module.exports.createOneRutine = async (req, res) => {
     const rutine = await Rutine.create({excercise, series, reps, rest})
     const period = await Period.findById(idPeriod);
     period.rutines.push(rutine)
+    period.save()
     res.json({message: "", rutine:rutine})
   } catch (err) {
     res.json({ message: 'Ocurrio un error', errors: err.errors })
