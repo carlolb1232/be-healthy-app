@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { simpleGet } from '../services/simpleGet';
+import styles from "./styles_modules/ClientsList.module.css"
 
 const ClientsList = () => {
 
@@ -26,16 +27,24 @@ const ClientsList = () => {
   }, []);
 
   return (
-    <div style={{backgroundColor:"black"}}>
-      <h1>esto es para el admin</h1>
-      {
-        users?.map(user=>{
-          return(
-            // Ese boton tiene la ruta para enviar a la lista de periodos de un cliente
-            <p>{user.firstName} <button onClick={()=>navigate(`/client-periods/${user._id}`)} className="btn btn-primary">ver</button></p>
-          )
-        })
-      }
+    <div className={styles.container}>
+      <div className={styles.container_background}>
+        <h3 className={styles.title}>Instructor de </h3>
+        <hr />
+        <div>
+          {
+            users?.map(user=>{
+              return(
+                // Ese boton tiene la ruta para enviar a la lista de periodos de un cliente
+                <div className={styles.container_user}>
+                  <p className={styles.user_name}>{user.firstName}</p>
+                  <button onClick={()=>navigate(`/client-periods/${user._id}`)} className={styles.btn_user}>ver</button>
+                </div>
+              )
+            })
+          }
+        </div>
+      </div>
     </div>
   );
 }

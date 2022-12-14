@@ -31,7 +31,7 @@ const MainUserDashboard = () => {
     <div className={styles.container}>
       <img src={img_dashboard} alt="imagen de dashboard" />
       <div className={styles.containerRegistros}>
-        <h3>Registros mensuales</h3>
+        <h3 className={styles.title}>Registros mensuales</h3>
         <div>
           <table className="table table-dark table_dashboard">
             <thead>

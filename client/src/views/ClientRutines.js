@@ -30,7 +30,7 @@ const ClientRutines = () => {
       <img src={img_rutina} alt="imagen de rutina" />
       <div className={styles.containerRutina}>
         <div className={styles.container_title}>
-          <h3 >Rutina</h3>
+          <h3 className={styles.title}>Rutina</h3>
           <button className={styles.btnCerrar} onClick={()=>navigate("/")}>X</button>
         </div>
       </div>
