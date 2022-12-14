@@ -53,7 +53,7 @@ const CreatePeriod = () => {
         <div className={styles.container_form}>
           <div className={styles.container_title}>
             <h3 className={styles.title}>Evaluación nutricional</h3>
-            <button className={styles.btnCerrar} onClick={()=>navigate("/client-periods/")}>X</button>
+            <button className={styles.btnCerrar} onClick={()=>navigate(-1)}>X</button>
           </div>
           <PeriodForm onSubmitProp={updateUser}/>
         </div>
