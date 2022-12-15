@@ -69,6 +69,8 @@ module.exports.updateUser = async (req, res) => {
   try {
     const {id} = req.params
     const {body} = req
+    console.log(body)
+    body.imc = (body.weight/Math.pow(body.height/10, 2))*100
     const user = await User.findByIdAndUpdate(id,body,{new:true})
     res.json({message:"", user:user})
   } catch (err) {

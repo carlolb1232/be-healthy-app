@@ -82,8 +82,15 @@ const ClientPeriods = () => {
                     <td>{moment(period.date).format('DD-MM-YYYY')}</td>
                     <td>{period.weight}</td>
                     <td>{period.height}</td>
-                    <td>{period.imc}</td>
-                    <td>{period.imc}</td>
+                    <td>{period.imc.toFixed(2)}</td>
+                    <td>
+                      {
+                        period.imc>24&&"normal"
+                      }
+                      {
+                        period.imc<24&&"bajo de peso"
+                      }
+                    </td>
                     <td><button className={styles.btn_crear} onClick={()=>navigate(`/client-rutines/${period._id}/${idUser}`)}>crear</button></td>
                     <td><button className={styles.btn_crear} onClick={()=>navigate(`/client-diet/${period._id}`)}>crear</button></td>
                   </tr>

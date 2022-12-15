@@ -7,10 +7,12 @@ const DietList = () => {
 
   const { idPeriod, section } = useParams();
   const [foods, setFoods] = useState([]);
+
   const getFoodsPerSectionFromPeriod = async () => {
     try {
-      const response = await simpleGet(`http://localhost:8000/api/period-food-section/${idPeriod}/${section}`)
-      console.log(response.data)
+      const response = await simpleGet(`http://localhost:8000/api/foods-section/${idPeriod}/${section}`)
+      console.log(response.data.foods)
+      setFoods(response.data.foods)
     } catch (err) {
       console.log(err)
     }
@@ -21,8 +23,26 @@ const DietList = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Este es un h2</h2>
+    <div style={{backgroundColor:"black"}}>
+      {
+        foods.length === 0?
+          <div className="foods-container">
+            <h1>PIDA DIETA AL COACH</h1>
+          </div>
+        :
+          <div className="foods-container">
+            {
+              foods.map(food=>{
+                return(
+                  <div className="food-container">
+                    <img style={{width:"250px", height:"250px"}} src={food.img} alt="" />
+                    <p>{food.name}</p>
+                  </div>
+                )
+              })
+            }
+          </div>
+      }
     </div>
   );
 }
