@@ -8,6 +8,7 @@ import { useUser } from "../contexts/userContext"
 import RutineForm from '../components/RutineForm';
 import { simplePost } from '../services/simplePost';
 
+
 const ClientRutines = () => {
 
   const { user, setUser } = useUser();
@@ -115,7 +116,7 @@ const ClientRutines = () => {
                         <td>{rutine?.series}</td>
                         <td>{rutine?.reps}</td>
                         <td>{rutine?.series}</td>
-                        <td><a className='btn btn-primary' href={rutine?.excercise?.link} target="_blank" rel="noreferrer">VER</a></td>
+                        <td><a className={styles.btn_ver} href={rutine?.excercise?.link} target="_blank" rel="noreferrer">ver</a></td>
                       </tr>
                       )
                     })

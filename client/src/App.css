@@ -15,6 +15,7 @@
 /* VISTA RUTINA USER */
 .table-rutina{
   margin: 0 auto;
+  margin-bottom: 80px;
   width: 1000px;
   font-family: 'Inter', sans-serif;
 }

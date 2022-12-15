@@ -107,3 +107,21 @@
   font-family: 'Inter', sans-serif;
   font-weight: 400;
 }
+
+.btn_ver{
+  border: 1.5px solid #5E5CE6 !important;
+  padding: 3px 25px ;
+  background-color: #d9d9d905;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  align-self: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.btn_ver:hover{
+  background-color: #5E5CE6 ;
+  color: white;
+}
