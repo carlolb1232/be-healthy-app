@@ -82,15 +82,15 @@ const RutineForm = (props) => {
                 {errors.excercise && touched.excercise && <p>{errors.excercise}</p>}
 
                 <label htmlFor="series" className="col-form-label">Series</label>
-                <Field id='series' type="number" placeholder="series" className={`form-control`} name='series' />
+                <Field id='series' type="number" placeholder="Ingrese la cantidad de series" className={`form-control`} name='series' />
                 {errors.series && touched.series && <p>{errors.series}</p>}
 
                 <label htmlFor="reps" className="col-form-label">Repeticiones</label>
-                <Field id='reps' type="number" placeholder="reps" className={`form-control`} name='reps' />
+                <Field id='reps' type="number" placeholder="Ingrese la cantidad de repeticiones" className={`form-control`} name='reps' />
                 {errors.reps && touched.reps && <p>{errors.reps}</p>}
 
                 <label htmlFor="rest" className="col-form-label">Descanso (seg)</label>
-                <Field id='rest' type="number" placeholder="rest" className={`form-control`} name='rest' />
+                <Field id='rest' type="number" placeholder="Ingrese el tiempo de descanso" className={`form-control`} name='rest' />
                 {errors.rest && touched.rest && <p>{errors.rest}</p>}
 
                 <br></br>

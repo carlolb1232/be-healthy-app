@@ -68,12 +68,11 @@ const ClientRutines = () => {
         user.rol==="admin"&&
           <div>
             <div className={styles.data_client}>
-              <p>{client?.firstName}</p>
-              <p>{client?.lastName}</p>
-              <p>{client?.age}</p>
-              <p>{client?.height}</p>
-              <p>{client?.weight}</p>
-              <p>{client?.imc}</p>
+              <p>Nombre:{" "} {client?.firstName} {" "} {client?.lastName}</p>
+              <p>Edad:{" "}{client?.age}</p>
+              <p>Altura:{" "} {client?.height}</p>
+              <p>Peso:{" "}  {client?.weight}</p>
+              <p>IMC:{" "} {client?.imc}</p>
             </div>
             <div className={styles.contain_background}>
               <div className={styles.contain_createRutine}>
