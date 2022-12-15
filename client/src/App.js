@@ -15,6 +15,8 @@ import DietList from "./views/DietList";
 import ClientPeriods from "./views/ClientPeriods";
 import CreatePeriod from "./views/CreatePeriod";
 import CreateExcercise from "./views/CreateExcercise";
+import CreateDiet from "./views/CreateDiet";
+import CreateFood from "./views/CreateFood";
 
 function App() {
 
@@ -42,6 +44,10 @@ function App() {
           <Route path="/create-period/:idUser" element={<CreatePeriod />} />
           {/* ESTA VISTA ES PARA CREAR EJERCICIOS */}
           <Route path="/create-excercise" element={<CreateExcercise />} />
+          {/* ESTA VISTA ES PARA CREAR DIETAS */}
+          <Route path="/create-diet/:idPeriod/:section" element={<CreateDiet />} />
+          {/* ESTA VISTA ES PARA CREAR COMIDAS */}
+          <Route path="/create-food" element={<CreateFood />} />
 
         </Routes>
       </UserProvider>

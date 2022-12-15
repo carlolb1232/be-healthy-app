@@ -18,7 +18,6 @@ module.exports.createOneRutine = async (req, res) => {
 module.exports.getRutinesFromPeriod = async (req, res) => {
   try {
     const { idPeriod } = req.params;
-    // console.log(idPeriod)
     const period = await Period.findById(idPeriod).populate({
       path: 'rutines',
       populate:{
@@ -27,8 +26,6 @@ module.exports.getRutinesFromPeriod = async (req, res) => {
       }
     })
       .exec();
-    // const period = await Period.findById(idPeriod);
-    console.log(period)
     res.json({message:"", rutines:period.rutines})
   } catch (err) {
     res.json({ message: 'Ocurrio un error', errors: err.errors })

@@ -5,11 +5,14 @@ import img_recomendado from "../assets/Behealthy_Recomendado.png"
 import img_moderado from "../assets/Behealthy_Moderado.png"
 import img_restrictivo from "../assets/Behealthy_Restrictivo.png"
 import img_diet from "../assets/img_dietaUsuario.png"
+import { useUser } from "../contexts/userContext"
 
 const ClientDiet = () => {
 
   const{idPeriod}=useParams()
   const navigate = useNavigate()
+  const { user, setUser } = useUser();
+
   return (
     <div className={styles.container}>
         <img  src={img_diet} alt="imagen de dieta nutricional" />
@@ -25,6 +28,10 @@ const ClientDiet = () => {
                 <p>Recomendado</p>
               </div>
               <button className={styles.btnVer} onClick={()=>navigate(`/client-foods-list/${idPeriod}/shouldEat`)}>ver</button>
+              {
+                user.rol === "admin"&&
+                <button className={styles.btnVer} onClick={()=>navigate(`/create-diet/${idPeriod}/shouldEat`)}>crear</button>
+              }
           </div>
         </div>
 
@@ -35,6 +42,10 @@ const ClientDiet = () => {
                 <p>Moderado</p>
               </div>
               <button className={styles.btnVer} onClick={()=>navigate(`/client-foods-list/${idPeriod}/canEat`)}>ver</button>
+              {
+                user.rol === "admin"&&
+                <button className={styles.btnVer} onClick={()=>navigate(`/create-diet/${idPeriod}/canEat`)}>crear</button>
+              }
           </div>
         </div>
 
@@ -45,6 +56,10 @@ const ClientDiet = () => {
                 <p>Restrictivo</p>
               </div>
               <button className={styles.btnVer} onClick={()=>navigate(`/client-foods-list/${idPeriod}/shouldntEat`)}>ver</button>
+              {
+                user.rol === "admin"&&
+                <button className={styles.btnVer} onClick={()=>navigate(`/create-diet/${idPeriod}/shouldntEat`)}>crear</button>
+              }
           </div>
         </div>
 

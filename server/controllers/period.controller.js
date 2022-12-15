@@ -40,10 +40,10 @@ module.exports.updateOnePeriodRutines = async (req, res) => {
 
 module.exports.updateOnePeriodDiets = async (req, res) => {
   try {
-    const { foods, section } = req.body;
-    const { idPeriod } = req.params;
+    const { foods } = req.body;
+    const { idPeriod, section } = req.params;
     const period = await Period.findById(idPeriod);
-    period[`${section}`].push(foods)
+    period[`${section}`] = period[`${section}`].concat(foods)
     period.save()
     res.json({message: "", period: period})
   } catch (err) {
