@@ -1,0 +1,27 @@
+.container{
+  background-color: #1F1F25;
+  height: calc(100vh - 55px );
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container_background{
+  background-color: #d9d9d910;
+  border-radius: 6px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  width: 1000px;
+  height: auto;
+}
+
+.title{
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 30px;
+
+
+}

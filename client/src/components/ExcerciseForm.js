@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import styles from "./ExcerciseForm.module.css"
 
 const ExcerciseForm = (props) => {
 
@@ -45,8 +46,8 @@ const ExcerciseForm = (props) => {
                 <label htmlFor="link" className="col-sm-2 col-form-label">Link</label>
                 <Field id='link' type="text" placeholder="Contraseña" className={`form-control`} name='link' />
                 {errors.link && touched.link && <p>{errors.link}</p>}
-                <br></br>
-                <button className="btn btn-primary" type="submit" disabled={Object.values(errors).length > 0}>Login</button>
+                <br></br><br></br>
+                <button className={styles.btnEnviar} disabled={Object.values(errors).length > 0}>Crear</button>
               </Form>
             </div>
           );
