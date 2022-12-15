@@ -38,7 +38,7 @@ const DietForm = (props) => {
     console.log(e)
     // setSearch(value.toUpperCase())
     setFilteredFoods(foods.filter(food=>food.name.includes(value.toUpperCase())))
-    if (search.length===0) {
+    if (value.length===0) {
       setFilteredFoods(foods)
     }
   }
