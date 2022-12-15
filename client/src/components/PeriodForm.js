@@ -14,7 +14,6 @@ const PeriodForm = (props) => {
         initialValues={{
           weight: 0,
           height: 0,
-          imc: 0,
           greesepercent: 0,
           calories: 0,
         }}
@@ -23,8 +22,6 @@ const PeriodForm = (props) => {
             .required("Por favor, ingresa un peso"),
           height: Yup.number()
             .required("Por favor, ingresa una altura"),
-          imc: Yup.number()
-            .required("Por favor, ingresa un imc"),
           greesepercent: Yup.number()
             .required("Por favor, ingresa un porcentaje de grasa"),
           calories: Yup.number()
@@ -56,10 +53,6 @@ const PeriodForm = (props) => {
                 <label htmlFor="height" className="col-form-label">Altura</label>
                 <Field id='height' type="number" placeholder="height" className={`form-control`} name='height' />
                 {errors.height && touched.height && <p>{errors.height}</p>}
-
-                <label htmlFor="imc" className="col-form-label">IMC</label>
-                <Field id='imc' type="number" placeholder="imc" className={`form-control`} name='imc' />
-                {errors.imc && touched.imc && <p>{errors.imc}</p>}
 
                 <label htmlFor="greesepercent" className="col-form-label">% de grasa en el cuerpo</label>
                 <Field id='greesepercent' type="number" placeholder="greesepercent" className={`form-control`} name='greesepercent' />

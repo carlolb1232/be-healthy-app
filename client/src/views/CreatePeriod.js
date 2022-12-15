@@ -18,7 +18,7 @@ const CreatePeriod = () => {
   const updateUser = async (values) => {
     try {
       const response = await simplePut(`http://localhost:8000/api/user/${idUser}`, values)
-      console.log(response.data.user)
+      console.log(response.data)
       const data = {
         date: moment().format('MM-DD-YY'),
         height: response.data.user.height,

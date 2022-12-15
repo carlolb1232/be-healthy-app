@@ -6,4 +6,5 @@ module.exports = app => {
   app.put("/api/period-rutines", PeriodController.updateOnePeriodRutines);
   app.put("/api/period-diets", PeriodController.updateOnePeriodDiets);
   app.put("/api/period-food-section/:idPeriod/:section", PeriodController.updateOnePeriodDiets);
+  app.get("/api/foods-section/:idPeriod/:section", PeriodController.getFoodsPerSection);
 }
