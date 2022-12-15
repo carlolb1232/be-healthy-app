@@ -33,13 +33,16 @@ const DietForm = (props) => {
 
   const handleChange = (e) =>{
     const { value } = e.target;
-    
+    setSearch(value.toUpperCase())
+  }
+  const a = () =>{
+    setFoods((oldFoods)=>oldFoods.filter(food=>food.name.includes(search)))
   }
 
   useEffect(()=>{
     search&&
     // console.log()
-    setFoods((oldFoods)=>oldFoods.filter(food=>food.name.includes(search)))
+    a()
     // foods.map(food=>console.log(food))
   }, [search])
 
@@ -70,7 +73,7 @@ const DietForm = (props) => {
               <form>
                 <div className="form-group">
                   <label htmlFor="search">Buscar:</label>
-                  <input type="text" name="search" id="search" onChange={(e)=>setSearch(e.target.value.toUpperCase())} />
+                  <input type="text" name="search" id="search" onChange={e=>handleChange(e)} />
                 </div>
               </form>
               <Form className="contact" method="post" onSubmit={handleSubmit}>

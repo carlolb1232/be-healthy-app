@@ -4,6 +4,11 @@
   background-image: url(../../assets/bg_home0.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 42px;
+  padding-left: 360px;
 }
 
 h1{
@@ -19,7 +24,7 @@ h1{
   color: white;
   border: 1px solid #5E5CE6 ;
   border-radius: 12px;
-  align-self: center;
+  width: 258px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
 }
