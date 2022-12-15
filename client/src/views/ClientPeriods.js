@@ -50,7 +50,7 @@ const ClientPeriods = () => {
         </div>
       </div>
       <div className={styles.contain_table}>
-        <div className={styles. }>
+        <div className={styles.contain_periods}>
           <h2 className={styles.title}>Registros mensuales</h2>
           <button className={styles.btn_createPediods} onClick={()=>navigate(`/create-period/${client?._id}`)}>Crear período de entrenamiento</button>
         </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import styles from "./FoodForm.module.css"
 
 const FoodForm = (props) => {
 
@@ -45,7 +46,7 @@ const FoodForm = (props) => {
                 <Field id='img' type="text" placeholder="Contraseña" className={`form-control`} name='img' />
                 {errors.img && touched.img && <p>{errors.img}</p>}
                 <br></br>
-                <button className="btn btn-primary" type="submit" disabled={Object.values(errors).length > 0}>Login</button>
+                <button className={styles.btnEnviar} type="submit" disabled={Object.values(errors).length > 0}>Crear</button>
               </Form>
             </div>
           );
