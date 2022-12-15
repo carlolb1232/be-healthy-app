@@ -56,3 +56,8 @@
   font-family: 'Inter', sans-serif;
   font-weight: 400;
 }
+
+.btn_user:hover{
+  background-color: #5E5CE6 ;
+  color: white;
+}

@@ -27,20 +27,8 @@ const CreateDiet = () => {
         <h4>Alimentos</h4>
       </div>
       <div className={styles.navbar}>
-        <div>
-        <form>
-          <label>
-            <input type="text" name="busqueda"  placeholder='¿Qué alimento buscas?'/>
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
-        <label htmlFor="" placeholder='¿Qué alimento buscas?'></label>
-        <button className={styles.btnBusqueda} onClick={()=>navigate("/")}>Buscar</button>
-        </div>
-
       </div>
       <div className={styles.container_title}>
-
           <button className={styles.btnCerrar} onClick={()=>navigate("/")}>X</button>
       </div>
       <button className={styles.btn_createAlimento} onClick={()=>navigate("/create-food")}>Agregar Alimento</button>

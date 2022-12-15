@@ -69,7 +69,11 @@ p{
   border: 1.5px solid #5E5CE6;
   border-radius: 6px;
   align-self:center;
+}
 
+.btnVer:hover{
+  background-color: #5E5CE6 ;
+  color: white;
 }
 
 p{
