@@ -66,7 +66,7 @@ const ClientRutines = () => {
       <img src={img_rutina} alt="imagen de rutina" />
       {
         user.rol==="admin"&&
-          <div className={styles.container}>
+          <div>
             <div className={styles.data_client}>
               <p>{client?.firstName}</p>
               <p>{client?.lastName}</p>
