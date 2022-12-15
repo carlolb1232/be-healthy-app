@@ -7,6 +7,7 @@ const DietForm = (props) => {
 
   const { onSubmitProp } = props;
 
+  const [filteredFoods, setFilteredFoods] = useState();
   const [foods, setFoods] = useState();
   const [search, setSearch] = useState();
 
@@ -21,6 +22,7 @@ const DietForm = (props) => {
       })
       console.log(newFoods)
       setFoods(newFoods)
+      setFilteredFoods(newFoods)
     } catch (err) {
       console.log(err)
     }
@@ -33,18 +35,14 @@ const DietForm = (props) => {
 
   const handleChange = (e) =>{
     const { value } = e.target;
-    setSearch(value.toUpperCase())
-  }
-  const a = () =>{
-    setFoods((oldFoods)=>oldFoods.filter(food=>food.name.includes(search)))
+    console.log(e)
+    // setSearch(value.toUpperCase())
+    setFilteredFoods(foods.filter(food=>food.name.includes(value.toUpperCase())))
+    if (search.length===0) {
+      setFilteredFoods(foods)
+    }
   }
 
-  useEffect(()=>{
-    search&&
-    // console.log()
-    a()
-    // foods.map(food=>console.log(food))
-  }, [search])
 
   return (
     <div >
@@ -80,7 +78,7 @@ const DietForm = (props) => {
                 <div id="checkbox-group">Comidas</div>
                 <div role="group" aria-labelledby="checkbox-group">
                   {
-                    foods?.map(food=>{
+                    filteredFoods?.map(food=>{
                       return(
                         <label key={food._id}>
                           <Field type="checkbox" name="foods" value={food._id} />
