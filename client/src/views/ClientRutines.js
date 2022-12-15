@@ -75,8 +75,8 @@ const ClientRutines = () => {
               <p>{client?.imc}</p>
             </div>
             <div className={styles.contain_background}>
-              <div className={styles.contain_rutine}>
-                <h4 className={styles.title}>Agregar rutina de ejercicio</h4>
+              <div className={styles.contain_createRutine}>
+                <h4 className={styles.contain_title}>Agregar rutina de ejercicio</h4>
                 <button className={styles.btn_createRutina} onClick={()=>navigate("/create-excercise")} >Agregar Ejercicio</button>
               </div>
               <RutineForm onSubmitProp={createRutine} />
@@ -115,7 +115,7 @@ const ClientRutines = () => {
                         <td>{rutine?.series}</td>
                         <td>{rutine?.reps}</td>
                         <td>{rutine?.series}</td>
-                        <td><a className='btn btn-primary' href={rutine?.excercise?.link} target="_blank">VER</a></td>
+                        <td><a className='btn btn-primary' href={rutine?.excercise?.link} target="_blank" rel="noreferrer">VER</a></td>
                       </tr>
                       )
                     })
