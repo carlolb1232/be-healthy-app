@@ -1,0 +1,163 @@
+.container{
+  background-color: #d9d9d910;
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 6px;
+  padding-bottom: 40px;
+
+
+  /* min-height: calc(100vh - 55px); */
+}
+
+.container_form{
+  width: 1100px;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.container_left{
+  /* background-color: brown; */
+  width: 50%;
+  margin-top: 25px;
+  margin-bottom: 40px;
+
+}
+.container_right{
+ /*  background-color: rgb(42, 165, 46); */
+  width: 50%;
+  margin-top: 25px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: flex-end;
+  gap:50px;
+
+}
+
+.container_input{
+  border-radius: 6px;
+  width: 300px;
+  text-align: center;
+  border: 1.5px solid #5E5CE6;
+  background-color: #d9d9d905;
+  color:white;
+}
+
+.btn_registroMensual{
+  padding: 3px 25px ;
+  background-color: #d9d9d905;
+  border: 1.5px solid #5E5CE6 !important;
+  color: white;
+  border:none;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.btn_createAlimento{
+  padding: 3px 25px ;
+  border-radius: 4px;
+  background-color: #d9d9d905;
+  color: white;
+  border: 1.5px solid #5E5CE6;
+  align-self: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.btn_createAlimento:hover, .btn_registroMensual:hover{
+  background-color: #5E5CE6 ;
+
+}
+
+
+
+/* FORM CARD */
+
+
+
+.containerSubmit{
+  display: flex;
+  justify-content: end;
+}
+
+.btn_finalizar{
+  padding: 3px 25px ;
+  background-color: #5E5CE6 ;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  align-self: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1.5px solid #5E5CE6;
+}
+
+
+.btn_finalizar:hover{
+  padding: 3px 25px ;
+  background-color: #d9d9d905;
+  color: white;
+  border: 1.5px solid #5E5CE6;
+  border-radius: 6px;
+  align-self: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  margin-bottom: 20px;
+
+
+}
+
+
+.container_card{
+  width: 250px;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap:25px;
+  row-gap:25px;
+
+
+
+}
+
+.card{
+  background-color: #d9d9d915;
+  border-radius: 6px;
+
+}
+
+.descripcion{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap:5px;
+  padding-bottom: 20px;
+
+}
+
+/* NO ME PESCA */
+.checkbox{
+  border: 1px solid red;
+}
+
+.img{
+  width: 200px;
+  height: 200px;
+  padding: 12px;
+  border-radius: 15px;
+
+}
+
+.name{
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+
+
+}

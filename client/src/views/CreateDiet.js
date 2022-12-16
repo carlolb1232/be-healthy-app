@@ -15,6 +15,7 @@ const CreateDiet = () => {
     try {
       const response = await simplePut(`http://localhost:8000/api/period-food-section/${idPeriod}/${section}`, values)
       console.log(response.data)
+      navigate(-1)
     } catch (err) {
       console.log(err)
     }
@@ -26,13 +27,7 @@ const CreateDiet = () => {
       <div className={styles.container_background}>
         <h4>Alimentos</h4>
       </div>
-      <div className={styles.navbar}>
-      </div>
-      <div className={styles.container_title}>
-          <button className={styles.btnCerrar} onClick={()=>navigate("/")}>X</button>
-      </div>
-      <button className={styles.btn_createAlimento} onClick={()=>navigate("/create-food")}>Agregar Alimento</button>
-      <DietForm onSubmitProp={createDiet}/>
+      <DietForm className={styles.container_DietForm} onSubmitProp={createDiet}/>
     </div>
   );
 }

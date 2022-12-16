@@ -1,3 +1,8 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 /* REGISTER */
 .form-control{
@@ -23,6 +28,13 @@
 /* VISTA EVALUACION NUTRICIONAL CLIENT */
 .form-control{
   color:white
+}
+
+/* DIET FORM */
+.form-diet{
+
+  width: 1100px;
+  margin: 0 auto;
 }
 
 

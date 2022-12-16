@@ -2,6 +2,8 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { simpleGet } from '../services/simpleGet';
+import styles from "./styles_modules/DietList.module.css"
+import img_diet from "../assets/img_dietaUsuario.png"
 
 const DietList = () => {
 
@@ -23,11 +25,12 @@ const DietList = () => {
   }, []);
 
   return (
-    <div style={{backgroundColor:"black"}}>
+    <div className={styles.container}>
+      <img  src={img_diet} alt="imagen de dieta nutricional" />
       {
         foods.length === 0?
-          <div className="foods-container">
-            <h1>PIDA DIETA AL COACH</h1>
+          <div className={styles.contain}>
+            <h3>PIDA DIETA AL COACH</h3>
           </div>
         :
           <div className="foods-container">
