@@ -34,9 +34,6 @@ const CreatePeriod = () => {
     }
   }
 
-  useEffect(() => {
-    console.log(moment().format('MM-DD-YY'))
-  }, []);
 
   const createPeriod = async(values)=>{
     try {

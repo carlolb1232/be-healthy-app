@@ -8,7 +8,7 @@ import logout from '../services/logout';
 const Navbar = () => {
 
   const navigate=useNavigate()
-  const { user, setUser } = useUser();
+  const { user, setUser } = useUser();  
 
   const logOut = async () => {
     const { success } = await logout();
@@ -30,6 +30,14 @@ const Navbar = () => {
                 <button className={styles.btn_register} onClick={()=>navigate("/register")}>Register</button>
                 <button className={styles.btn_login} onClick={()=>navigate("/login")}>Login</button>
               </>
+            }
+            {
+              user && user.rol==="admin" &&
+              <button className={styles.btn_login} onClick={()=>navigate("/create-admin")}>Crear Admin</button>
+            }
+            {
+              user&&
+              <button className={styles.btn_login} onClick={()=>navigate("/user-update")}>Editar Perfil</button>
             }
             {
               user&&

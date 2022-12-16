@@ -72,7 +72,7 @@ const ClientRutines = () => {
               <p>Edad:{" "}{client?.age}</p>
               <p>Altura:{" "} {client?.height}</p>
               <p>Peso:{" "}  {client?.weight}</p>
-              <p>IMC:{" "} {client?.imc}</p>
+              <p>IMC:{" "} {client?.imc.toFixed(2)}</p>
             </div>
             <div className={styles.contain_background}>
               <div className={styles.contain_createRutine}>

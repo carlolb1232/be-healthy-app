@@ -17,6 +17,9 @@ import CreatePeriod from "./views/CreatePeriod";
 import CreateExcercise from "./views/CreateExcercise";
 import CreateDiet from "./views/CreateDiet";
 import CreateFood from "./views/CreateFood";
+import EditUser from "./views/EditUser";
+import CreateAdmin from "./views/CreateAdmin";
+import CreateFirstAdmin from "./views/CreateFirstAdmin";
 
 function App() {
 
@@ -35,6 +38,8 @@ function App() {
           <Route path="/client-rutines/:idPeriod/:idUser" element={<ClientRutines />}></Route>
           <Route path="/client-diet/:idPeriod" element={<ClientDiet />}></Route>
           <Route path="/client-foods-list/:idPeriod/:section" element={<DietList />}></Route>
+          {/* Esta vista es para actualizar el usuario */}
+          <Route path="/user-update" element={<EditUser />} />
 
           {/* ADMIN */}
 
@@ -48,6 +53,10 @@ function App() {
           <Route path="/create-diet/:idPeriod/:section" element={<CreateDiet />} />
           {/* ESTA VISTA ES PARA CREAR COMIDAS */}
           <Route path="/create-food" element={<CreateFood />} />
+          {/* ESTA VISTA ES PARA CREAR EL PRIMER ADMINISTRADOR */}
+          <Route path="/create-first-admin" element={<CreateFirstAdmin />} />
+          {/* ESTA VISTA ES PARA CREAR ADMINISTRADORES */}
+          <Route path="/create-admin" element={<CreateAdmin />} />
 
         </Routes>
       </UserProvider>

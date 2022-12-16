@@ -74,6 +74,17 @@ module.exports.updateUser = async (req, res) => {
     const user = await User.findByIdAndUpdate(id,body,{new:true})
     res.json({message:"", user:user})
   } catch (err) {
-    res.json({ message: 'Ocurrio un error', errors: err.errors })
+    res.json({ message: 'Ocurrio un error', errors: err })
+  }
+}
+
+module.exports.updateUserProfile = async (req, res) => {
+  try {
+    const {id} = req.params
+    const {body} = req
+    const user = await User.findByIdAndUpdate(id,body,{new:true})
+    res.json({message:"", user:user})
+  } catch (err) {
+    res.json({ message: 'Ocurrio un error', errors: err })
   }
 }
