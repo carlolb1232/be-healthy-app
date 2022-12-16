@@ -26,12 +26,10 @@ const CreateDiet = () => {
       <div className={styles.container_background}>
         <h4>Alimentos</h4>
       </div>
-      <div className={styles.navbar}>
-      </div>
       <div className={styles.container_title}>
-          <button className={styles.btnCerrar} onClick={()=>navigate("/")}>X</button>
+         {/*  <button className={styles.btnCerrar} onClick={()=>navigate("/")}>X</button> */}
       </div>
-      <button className={styles.btn_createAlimento} onClick={()=>navigate("/create-food")}>Agregar Alimento</button>
+      {/* <button className={styles.btn_createAlimento} onClick={()=>navigate("/create-food")}>Agregar Alimento</button> */}
       <DietForm onSubmitProp={createDiet}/>
     </div>
   );

@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { simpleGet } from '../services/simpleGet';
+import styles from "./DietForm.module.css"
+import { useNavigate } from 'react-router-dom';
 
 const DietForm = (props) => {
 
+  const navigate = useNavigate()
   const { onSubmitProp } = props;
 
   const [filteredFoods, setFilteredFoods] = useState();
@@ -50,6 +53,7 @@ const DietForm = (props) => {
         initialValues={{
           // toggle: false,
           foods: [],
+          /* search:"", */
         }}
 
         onSubmit={(values, { setSubmitting }) => {
@@ -67,14 +71,19 @@ const DietForm = (props) => {
           valid,
         }) => {
           return (
-            <div>
+            <div className={styles.container}>
               <form>
                 <div className="form-group">
                   <label htmlFor="search">Buscar:</label>
                   <input type="text" name="search" id="search" onChange={e=>handleChange(e)} />
+                  <button className={styles.btnCerrar} onClick={()=>navigate("/")}>X</button>
+                  <button className={styles.btn_createAlimento} onClick={()=>navigate("/create-food")}>Agregar Alimento</button>
                 </div>
               </form>
               <Form className="contact" method="post" onSubmit={handleSubmit}>
+
+
+                <button type="submit">Submit</button>
                 <div id="checkbox-group">Comidas</div>
                 <div role="group" aria-labelledby="checkbox-group">
                   {
@@ -88,7 +97,6 @@ const DietForm = (props) => {
                     })
                   }
                 </div>
-                <button type="submit">Submit</button>
               </Form>
             </div>
           );

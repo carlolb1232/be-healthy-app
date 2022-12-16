@@ -1,0 +1,7 @@
+.container{
+  background-color: #0000ff;
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  /* min-height: calc(100vh - 55px); */
+}
