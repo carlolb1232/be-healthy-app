@@ -46,6 +46,12 @@
   font-weight: 500;
 }
 
+.container_btns{
+  display: flex;
+  gap: 25px
+
+}
+
 .btn_user{
   padding: 3px 25px ;
   background-color: #d9d9d905;
@@ -58,6 +64,26 @@
 }
 
 .btn_user:hover{
+  background-color: #5E5CE6 ;
+  color: white;
+}
+
+.icono_trash{
+  height: 18px;
+}
+
+.btn_trash{
+  padding: 3px 25px ;
+  background-color: #d9d9d905;
+  color: white;
+  border: 1.5px solid #5E5CE6 ;
+  border-radius: 6px;
+  align-self: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.btn_trash:hover{
   background-color: #5E5CE6 ;
   color: white;
 }

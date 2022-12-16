@@ -121,9 +121,6 @@
   grid-template-columns: repeat(5, 1fr);
   column-gap:25px;
   row-gap:25px;
-
-
-
 }
 
 .card{
@@ -152,12 +149,9 @@
   height: 200px;
   padding: 12px;
   border-radius: 15px;
-
 }
 
 .name{
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-
-
 }

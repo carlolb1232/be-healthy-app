@@ -7,6 +7,7 @@ import img_rutina from "../assets/img_rutinaUsuario.png"
 import { useUser } from "../contexts/userContext"
 import RutineForm from '../components/RutineForm';
 import { simplePost } from '../services/simplePost';
+import img_trash from "../assets/transh.svg"
 
 
 const ClientRutines = () => {
@@ -99,6 +100,7 @@ const ClientRutines = () => {
                   <th>Repeticiones</th>
                   <th>Descansos(sg)</th>
                   <th>Ejemplo</th>
+                  <th>Eliminar</th>
                 </tr>
               </thead>
               <tbody>
@@ -116,6 +118,12 @@ const ClientRutines = () => {
                         <td>{rutine?.reps}</td>
                         <td>{rutine?.series}</td>
                         <td><a className={styles.btn_ver} href={rutine?.excercise?.link} target="_blank" rel="noreferrer">ver</a></td>
+                        <td>
+                          {/* CAMBIAR FUNCIONALIDAD DEL BOTON */}
+                          <button onClick={()=>navigate(`/client-periods/${user._id}`)} className={styles.btn_trash}>
+                            <img className={styles.icono_trash} src={img_trash} alt="icono de basura" />
+                          </button>
+                        </td>
                       </tr>
                       )
                     })

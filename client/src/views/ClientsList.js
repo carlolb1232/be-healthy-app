@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { simpleGet } from '../services/simpleGet';
 import styles from "./styles_modules/ClientsList.module.css"
+import img_trash from "../assets/transh.svg"
 
 const ClientsList = () => {
 
@@ -38,7 +39,13 @@ const ClientsList = () => {
                 // Ese boton tiene la ruta para enviar a la lista de periodos de un cliente
                 <div className={styles.container_user}>
                   <p className={styles.user_name}>{user.firstName}{" "}{user.lastName} </p>
-                  <button onClick={()=>navigate(`/client-periods/${user._id}`)} className={styles.btn_user}>ver</button>
+                  <div className={styles.container_btns}>
+                    <button onClick={()=>navigate(`/client-periods/${user._id}`)} className={styles.btn_user}>ver</button>
+                    {/*  CAMBIAR LA FUNCIONALIDAD DEL BOTON DE ABAJO */}
+                    <button onClick={()=>navigate(`/client-periods/${user._id}`)} className={styles.btn_trash}>
+                      <img className={styles.icono_trash} src={img_trash} alt="icono de basura" />
+                    </button>
+                  </div>
                 </div>
               )
             })

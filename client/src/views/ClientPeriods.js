@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { simpleGet } from '../services/simpleGet';
 import moment from 'moment';
 import styles from "./styles_modules/ClientPeriods.module.css"
+import img_trash from "../assets/transh.svg"
 
 const ClientPeriods = () => {
   // ESTA VISTA TIENE TODOS LOS PERIODOS DE UN CLIENTE
@@ -66,6 +67,7 @@ const ClientPeriods = () => {
               <th>IMC</th>
               <th>Rutinas</th>
               <th>Dietas</th>
+              <th>Eliminar</th>
             </tr>
           </thead>
           <tbody>
@@ -93,6 +95,12 @@ const ClientPeriods = () => {
                     </td>
                     <td><button className={styles.btn_crear} onClick={()=>navigate(`/client-rutines/${period._id}/${idUser}`)}>crear</button></td>
                     <td><button className={styles.btn_crear} onClick={()=>navigate(`/client-diet/${period._id}`)}>crear</button></td>
+                    {/* CAMBIAR FUNCIONALIDAD DEL BOTON */}
+                    <td>
+                      <button onClick={()=>navigate(`/}`)} className={styles.btn_trash}>
+                        <img className={styles.icono_trash} src={img_trash} alt="icono de basura" />
+                      </button>
+                    </td>
                   </tr>
                 )
               })

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { simpleGet } from '../services/simpleGet';
 import styles from "./styles_modules/DietList.module.css"
 import img_diet from "../assets/img_dietaUsuario.png"
@@ -9,6 +9,7 @@ const DietList = () => {
 
   const { idPeriod, section } = useParams();
   const [foods, setFoods] = useState([]);
+  const navigate = useNavigate()
 
   const getFoodsPerSectionFromPeriod = async () => {
     try {
@@ -30,15 +31,20 @@ const DietList = () => {
       {
         foods.length === 0?
           <div className={styles.contain}>
-            <h3>PIDA DIETA AL COACH</h3>
+            <div className={styles.container_background}>
+            <p>¡Lo siento! No tienes una dieta creada, debes agendar una cita</p>
+            <button className={styles.btn_cerrar} onClick={()=>navigate(-1)}>X</button>
+            </div>
           </div>
         :
           <div className="foods-container">
+
+
             {
               foods.map(food=>{
                 return(
                   <div className="food-container">
-                    <img style={{width:"250px", height:"250px"}} src={food.img} alt="" />
+                    <img className={styles.img} src={food.img} alt="" />
                     <p>{food.name}</p>
                   </div>
                 )

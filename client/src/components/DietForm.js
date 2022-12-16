@@ -95,16 +95,13 @@ const DietForm = (props) => {
                     filteredFoods?.map(food=>{
                       return(
                         <div className={styles.card} key={food._id}>
-
                             <img className={styles.img} src={food.img} alt="imagen del alimento" />
                             <div className={styles.descripcion} >
                               <Field className={styles.checkbox} type="checkbox" name="foods" value={food._id} />
-
                               <label className={styles.name}> {food.name}</label>
-
                             </div>
 
-                          </div>
+                        </div>
                       )
                     })
                   }
