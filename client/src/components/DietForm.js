@@ -72,27 +72,39 @@ const DietForm = (props) => {
         }) => {
           return (
             <div className={styles.container}>
-              <form>
-                <div className="form-group">
-                  <label htmlFor="search">Buscar:</label>
-                  <input type="text" name="search" id="search" onChange={e=>handleChange(e)} />
-                  <button className={styles.btnCerrar} onClick={()=>navigate("/")}>X</button>
+              <form className={styles.container_form}>
+                <div className={styles.container_left}>
+                  <label htmlFor="search" ></label>
+                  <input className={styles.container_input} type="text" name="search" id="search" placeholder="¿Qué alimento buscas?" onChange={e=>handleChange(e)} />
+                </div>
+                <div  className={styles.container_right}>
+                  <button className={styles.btn_registroMensual} onClick={()=>navigate("/")}>Volver al registro mensual</button>
                   <button className={styles.btn_createAlimento} onClick={()=>navigate("/create-food")}>Agregar Alimento</button>
                 </div>
               </form>
-              <Form className="contact" method="post" onSubmit={handleSubmit}>
 
 
-                <button type="submit">Submit</button>
-                <div id="checkbox-group">Comidas</div>
-                <div role="group" aria-labelledby="checkbox-group">
+              <Form className="contact form-diet" method="post" onSubmit={handleSubmit}>
+                <div className={styles.containerSubmit}>
+                  <button type="submit" className={styles.btn_finalizar}>Finalizar</button>
+                </div>
+
+                {/* <div id="checkbox-group">Comidas</div> */}
+                <div className={styles.container_card}  role="group" aria-labelledby="checkbox-group">
                   {
                     filteredFoods?.map(food=>{
                       return(
-                        <label key={food._id}>
-                          <Field type="checkbox" name="foods" value={food._id} />
-                          {food.name}
-                        </label>
+                        <div className={styles.card} key={food._id}>
+
+                            <img className={styles.img} src={food.img} alt="imagen del alimento" />
+                            <div className={styles.descripcion} >
+                              <Field className={styles.checkbox} type="checkbox" name="foods" value={food._id} />
+
+                              <label className={styles.name}> {food.name}</label>
+
+                            </div>
+
+                          </div>
                       )
                     })
                   }
