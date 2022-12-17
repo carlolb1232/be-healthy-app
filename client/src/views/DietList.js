@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { simpleGet } from '../services/simpleGet';
 import styles from "./styles_modules/DietList.module.css"
 import img_diet from "../assets/img_dietaUsuario.png"
+import img_trash from "../assets/transh.svg"
 
 const DietList = () => {
 
@@ -37,19 +38,23 @@ const DietList = () => {
             </div>
           </div>
         :
-          <div className="foods-container">
-
-
-            {
-              foods.map(food=>{
-                return(
-                  <div className="food-container">
-                    <img className={styles.img} src={food.img} alt="" />
-                    <p>{food.name}</p>
-                  </div>
-                )
-              })
-            }
+          <div className={styles.contenedor}>
+            <div className={styles.container_back}>
+              <h4>Alimentos</h4>
+            </div>
+            <div className={styles.container_card}>
+              {
+                foods.map(food=>{
+                  return(
+                    <div className={styles.card}>
+                      <button className={styles.btn_trash}><img className={styles.icono_trash} src={img_trash} alt="icono de eliminar" /></button>
+                      <img className={styles.img} src={food.img} alt="" />
+                      <p className={styles.name}>{food.name}</p>
+                    </div>
+                  )
+                })
+              }
+            </div>
           </div>
       }
     </div>

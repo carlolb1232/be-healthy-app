@@ -13,7 +13,7 @@
   margin: 0 auto;
   margin-top: 40px;
   margin-bottom: 40px;
-  width: 1200px;
+  width: 1100px;
   height: 60px;
   border-radius:6px;
   font-family: 'Inter', sans-serif;
@@ -26,8 +26,6 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-
-
 }
 
 .btn_cerrar{
@@ -43,10 +41,78 @@
 
 }
 
+.contenedor{
+  width: 1100px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.container_back{
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 1100px;
+  height: 40px;
+  background-color: #d9d9d910;
+  border-radius:6px;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.container_card{
+  width: 250px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap:25px;
+  row-gap:25px;
+}
+
+.card{
+  background-color: #d9d9d915;
+  border-radius: 6px;
+  position:relative;
+}
+
 
 .img{
   width: 200px;
   height: 200px;
   padding: 12px;
   border-radius: 15px;
+}
+
+.name{
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+.icono_trash{
+  height: 15px;
+}
+
+.btn_trash{
+  padding: 3px 5px ;
+  background-color: #d9d9d905;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  align-self: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  position: absolute;
+  top: 12px;
+  left: 166px;
+}
+
+
+.btn_trash:hover{
+  background-color: #5E5CE6 ;
+  border: none;
+  color: white;
 }
