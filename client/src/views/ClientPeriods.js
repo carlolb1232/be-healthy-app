@@ -5,8 +5,13 @@ import { simpleGet } from '../services/simpleGet';
 import moment from 'moment';
 import styles from "./styles_modules/ClientPeriods.module.css"
 import img_trash from "../assets/transh.svg"
+import { simpleDelete } from '../services/simpleDelete';
+import { useUser } from "../contexts/userContext"
 
 const ClientPeriods = () => {
+
+  const { user, setUser } = useUser();
+
   // ESTA VISTA TIENE TODOS LOS PERIODOS DE UN CLIENTE
   const { idUser } = useParams();
   const [client, setClient] = useState();
@@ -40,6 +45,16 @@ const ClientPeriods = () => {
     getPeriodsFromClient();
   }, []);
 
+  const deletePeriod = async (id) => {
+    try {
+      const response = await simpleDelete(`http://localhost:8000/api/delete-period/${id}`)
+      console.log(response.data)
+      setPeriods((oldPeriods)=>oldPeriods.filter(period=>period._id !== id))
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.contain_client}>
@@ -67,7 +82,10 @@ const ClientPeriods = () => {
               <th>IMC</th>
               <th>Rutinas</th>
               <th>Dietas</th>
-              <th>Eliminar</th>
+              {
+                user.rol === "admin"&&
+                  <th>Eliminar</th>
+              }
             </tr>
           </thead>
           <tbody>
@@ -87,20 +105,35 @@ const ClientPeriods = () => {
                     <td>{period.imc.toFixed(2)}</td>
                     <td>
                       {
-                        period.imc>24&&"normal"
+                        period.imc<=18.4&&"Bajo de Peso"
                       }
                       {
-                        period.imc<24&&"bajo de peso"
+                        period.imc>=18.5 && period.imc<=24.9 &&"normal"
+                      }
+                      {
+                        period.imc>=25 && period.imc<=29.9 &&"Sobre Peso"
+                      }
+                      {
+                        period.imc>=30 && period.imc<=34.9 &&"Obesidad Clase 1"
+                      }
+                      {
+                        period.imc>=35 && period.imc<=39.9 &&"Obesidad Clase 2"
+                      }
+                      {
+                        period.imc>=40 &&"Obesidad Clase 3"
                       }
                     </td>
                     <td><button className={styles.btn_crear} onClick={()=>navigate(`/client-rutines/${period._id}/${idUser}`)}>crear</button></td>
                     <td><button className={styles.btn_crear} onClick={()=>navigate(`/client-diet/${period._id}`)}>crear</button></td>
                     {/* CAMBIAR FUNCIONALIDAD DEL BOTON */}
-                    <td>
-                      <button onClick={()=>navigate(`/}`)} className={styles.btn_trash}>
-                        <img className={styles.icono_trash} src={img_trash} alt="icono de basura" />
-                      </button>
-                    </td>
+                    {
+                      user.rol === "admin"&&
+                        <td>
+                          <button onClick={()=>deletePeriod(period._id)} className={styles.btn_trash}>
+                            <img className={styles.icono_trash} src={img_trash} alt="icono de basura" />
+                          </button>
+                        </td>
+                    }
                   </tr>
                 )
               })

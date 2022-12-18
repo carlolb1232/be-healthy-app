@@ -61,3 +61,35 @@ module.exports.getFoodsPerSection = async (req, res) => {
     res.json({ message: 'Ocurrio un error', errors: err.errors })
   }
 }
+
+module.exports.deletePeriod = async (req, res) => {
+  try {
+    const { id } = req.params
+    const period = await Period.findByIdAndDelete(id)
+    res.json({message:"", period:period})
+  } catch (err) {
+    res.json({ message: 'Ocurrio un error', errors: err })
+  }
+}
+
+module.exports.deleteFoodFromDiet = async (req, res) => {
+  try {
+    const {idFood, section, idPeriod} = req.params
+    const period = await Period.findById(idPeriod).populate(`${section}`).exec();
+    // console.log(period[`${section}`])
+    let newSection = period[`${section}`].map(food=>{
+      console.log("comi", food._id)
+      console.log("targ", `new ObjectId("${idFood}")`);
+      if (food._id === `new ObjectId("${idFood}")`) {
+        console.log("se borra", food.name)
+      }
+    });
+    console.log("idfood", idFood)
+    console.log(newSection)
+    // period[`${section}`] = newSection;
+    period.save()
+    res.json({message:"", foods: period[`${section}`]})
+  } catch (err) {
+    res.json({ message: 'Ocurrio un error', errors: err })
+  }
+}

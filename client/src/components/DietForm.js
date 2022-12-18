@@ -100,7 +100,7 @@ const DietForm = (props) => {
                             <img className={styles.img} src={food.img} alt="imagen del alimento" />
                             <div className={styles.descripcion} >
                               <Field className={styles.checkbox} type="checkbox" name="foods" value={food._id} />
-                              <label className={styles.name}> {food.name}</label>
+                              <label className={styles.name}> {food.name[0] +food.name.substring(1).toLowerCase()}</label>
                             </div>
                         </div>
                       )

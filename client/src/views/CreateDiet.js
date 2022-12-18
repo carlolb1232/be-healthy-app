@@ -25,7 +25,14 @@ const CreateDiet = () => {
     <div className={styles.container}>
       <img  src={img_diet} alt="imagen de dieta nutricional" />
       <div className={styles.container_background}>
-        <h4>Alimentos</h4>
+        <h4>Alimentos {
+          section ==="shouldEat" && "recomendados" 
+          } {
+          section ==="canEat" && "moderados" 
+          } {
+          section ==="shouldntEat" && "restrictivos" 
+          }
+        </h4>
       </div>
       <DietForm className={styles.container_DietForm} onSubmitProp={createDiet}/>
     </div>

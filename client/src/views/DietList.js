@@ -5,8 +5,12 @@ import { simpleGet } from '../services/simpleGet';
 import styles from "./styles_modules/DietList.module.css"
 import img_diet from "../assets/img_dietaUsuario.png"
 import img_trash from "../assets/transh.svg"
+import { simpleDelete } from '../services/simpleDelete';
+import { useUser } from "../contexts/userContext"
 
 const DietList = () => {
+
+  const { user, setUser } = useUser();
 
   const { idPeriod, section } = useParams();
   const [foods, setFoods] = useState([]);
@@ -26,6 +30,16 @@ const DietList = () => {
     getFoodsPerSectionFromPeriod();
   }, []);
 
+  const deleteFoodFromPeriod = async (idFood) => {
+    try {
+      const response = await simpleDelete(`http://localhost:8000/api/delete-food-period/${idFood}/${section}/${idPeriod}`);
+      console.log(response.data);
+      setFoods((oldFoods) => oldFoods.filter(food=>food._id !== idFood))
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   return (
     <div className={styles.container}>
       <img  src={img_diet} alt="imagen de dieta nutricional" />
@@ -40,16 +54,25 @@ const DietList = () => {
         :
           <div className={styles.contenedor}>
             <div className={styles.container_back}>
-              <h4>Alimentos</h4>
+              <h4>Alimentos {
+          section ==="shouldEat" && "recomendados" 
+          } {
+          section ==="canEat" && "moderados" 
+          } {
+          section ==="shouldntEat" && "restrictivos" 
+          }</h4>
             </div>
             <div className={styles.container_card}>
               {
                 foods.map(food=>{
                   return(
-                    <div className={styles.card}>
-                      <button className={styles.btn_trash}><img className={styles.icono_trash} src={img_trash} alt="icono de eliminar" /></button>
+                    <div key={food._id} className={styles.card}>
+                      {
+                        user.rol === "admin"&&
+                          <button onClick={()=>deleteFoodFromPeriod(food._id)} className={styles.btn_trash}><img className={styles.icono_trash} src={img_trash} alt="icono de eliminar" /></button>
+                      }
                       <img className={styles.img} src={food.img} alt="" />
-                      <p className={styles.name}>{food.name}</p>
+                      <p className={styles.name}>{food.name[0] +food.name.substring(1).toLowerCase()}</p>
                     </div>
                   )
                 })

@@ -8,7 +8,7 @@ import { useUser } from "../contexts/userContext"
 import RutineForm from '../components/RutineForm';
 import { simplePost } from '../services/simplePost';
 import img_trash from "../assets/transh.svg"
-
+import { simpleDelete } from '../services/simpleDelete';
 
 const ClientRutines = () => {
 
@@ -62,6 +62,16 @@ const ClientRutines = () => {
     }
   }
 
+  const deleteRutine = async (id) => {
+    try {
+      const response = await simpleDelete(`http://localhost:8000/api/delete-rutine/${id}`)
+      console.log(response.data)
+      setRutines((oldRutines)=>oldRutines.filter(rutine=>rutine._id !== id))
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   return (
     <div className={styles.container}>
       <img src={img_rutina} alt="imagen de rutina" />
@@ -100,7 +110,10 @@ const ClientRutines = () => {
                   <th>Repeticiones</th>
                   <th>Descansos(sg)</th>
                   <th>Ejemplo</th>
-                  <th>Eliminar</th>
+                  {
+                    user.rol === "admin" &&
+                      <th>Eliminar</th>
+                  }
                 </tr>
               </thead>
               <tbody>
@@ -112,18 +125,21 @@ const ClientRutines = () => {
                     :
                     rutines?.map(rutine=>{
                       return(
-                      <tr key={rutine?._id}>
+                      <tr key={rutine._id}>
                         <td>{rutine?.excercise?.name}</td>
                         <td>{rutine?.series}</td>
                         <td>{rutine?.reps}</td>
                         <td>{rutine?.series}</td>
                         <td><a className={styles.btn_ver} href={rutine?.excercise?.link} target="_blank" rel="noreferrer">ver</a></td>
-                        <td>
                           {/* CAMBIAR FUNCIONALIDAD DEL BOTON */}
-                          <button onClick={()=>navigate(`/client-periods/${user._id}`)} className={styles.btn_trash}>
-                            <img className={styles.icono_trash} src={img_trash} alt="icono de basura" />
-                          </button>
-                        </td>
+                          {
+                            user.rol === "admin" &&
+                              <td>
+                                <button onClick={()=>deleteRutine(rutine._id)} className={styles.btn_trash}>
+                                  <img className={styles.icono_trash} src={img_trash} alt="icono de basura" />
+                                </button>
+                              </td>
+                          }
                       </tr>
                       )
                     })

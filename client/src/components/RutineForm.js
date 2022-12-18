@@ -74,7 +74,7 @@ const RutineForm = (props) => {
                   {
                     excercises?.map(excercise=>{
                       return(
-                        <option value={excercise._id}>{excercise.name}</option>
+                        <option key={excercise._id} value={excercise._id}>{excercise.name}</option>
                       )
                     })
                   }

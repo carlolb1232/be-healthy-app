@@ -88,3 +88,13 @@ module.exports.updateUserProfile = async (req, res) => {
     res.json({ message: 'Ocurrio un error', errors: err })
   }
 }
+
+module.exports.deleteUser = async (req, res) => {
+  try {
+    const { id } = req.params
+    const user = await User.findByIdAndDelete(id)
+    res.json({message:"", user:user})
+  } catch (err) {
+    res.json({ message: 'Ocurrio un error', errors: err })
+  }
+}

@@ -31,3 +31,13 @@ module.exports.getRutinesFromPeriod = async (req, res) => {
     res.json({ message: 'Ocurrio un error', errors: err.errors })
   }
 }
+
+module.exports.deleteRutine = async (req, res) => {
+  try {
+    const { id } = req.params
+    const rutine = await Rutine.findByIdAndDelete(id)
+    res.json({message:"", rutine:rutine})
+  } catch (err) {
+    res.json({ message: 'Ocurrio un error', errors: err })
+  }
+}
