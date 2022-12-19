@@ -25,6 +25,10 @@ const Navbar = () => {
           <img className={styles.logo} src={logo} onClick={()=>navigate("/")} alt="logo Behealthy" />
           <div className={styles.container_btns}>
             {
+              user &&
+                <p className="mr-5 mt-1">Bienvenido {user.firstName} {user.lastName}</p>
+            }
+            {
               !user&&
               <>
                 <button className={styles.btn_register} onClick={()=>navigate("/register")}>Register</button>
