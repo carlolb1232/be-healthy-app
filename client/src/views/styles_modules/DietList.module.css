@@ -1,7 +1,7 @@
 .container{
   background-color: #1F1F25;
   /* height: 100%; */
-  height: calc(100vh-55px);
+  min-height: calc(100vh - 55px);
   box-sizing: border-box;
   padding-bottom: 50px;
 }
