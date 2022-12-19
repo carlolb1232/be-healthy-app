@@ -5,6 +5,7 @@ import { simpleGet } from '../services/simpleGet';
 import styles from "./DietForm.module.css"
 import { useNavigate } from 'react-router-dom';
 import img_trash from "../assets/transh.svg"
+import { simpleDelete } from '../services/simpleDelete';
 
 const DietForm = (props) => {
 
@@ -44,6 +45,16 @@ const DietForm = (props) => {
     setFilteredFoods(foods.filter(food=>food.name.includes(value.toUpperCase())))
     if (value.length===0) {
       setFilteredFoods(foods)
+    }
+  }
+
+  const deleteOneFood = async (idFood) => {
+    try {
+      const response = await simpleDelete(`http://localhost:8000/api/foods/${idFood}`)
+      console.log(response.data)
+      setFoods((oldFoods)=>oldFoods.filter(food=>food._id !== idFood))
+    } catch (err) {
+      console.log(err)
     }
   }
 
@@ -96,7 +107,7 @@ const DietForm = (props) => {
                     filteredFoods?.map(food=>{
                       return(
                         <div className={styles.card} key={food._id}>
-                            <button className={styles.btn_trash}><img className={styles.icono_trash} src={img_trash} alt="icono de eliminar" /></button>
+                            <button onClick={()=>deleteOneFood(food._id)} className={styles.btn_trash}><img className={styles.icono_trash} src={img_trash} alt="icono de eliminar" /></button>
                             <img className={styles.img} src={food.img} alt="imagen del alimento" />
                             <div className={styles.descripcion} >
                               <Field className={styles.checkbox} type="checkbox" name="foods" value={food._id} />

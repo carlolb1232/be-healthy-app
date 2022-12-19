@@ -77,16 +77,10 @@ module.exports.deleteFoodFromDiet = async (req, res) => {
     const {idFood, section, idPeriod} = req.params
     const period = await Period.findById(idPeriod).populate(`${section}`).exec();
     // console.log(period[`${section}`])
-    let newSection = period[`${section}`].map(food=>{
-      console.log("comi", food._id)
-      console.log("targ", `new ObjectId("${idFood}")`);
-      if (food._id === `new ObjectId("${idFood}")`) {
-        console.log("se borra", food.name)
-      }
-    });
-    console.log("idfood", idFood)
+    let newSection = period[`${section}`].filter(food=>food._id.valueOf() !== idFood);
+    // console.log("idfood", idFood)
     console.log(newSection)
-    // period[`${section}`] = newSection;
+    period[`${section}`] = newSection;
     period.save()
     res.json({message:"", foods: period[`${section}`]})
   } catch (err) {
