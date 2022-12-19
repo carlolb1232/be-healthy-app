@@ -34,7 +34,7 @@ const CreateDiet = () => {
           }
         </h4>
       </div>
-      <DietForm className={styles.container_DietForm} onSubmitProp={createDiet}/>
+      <DietForm className={styles.container_DietForm} onSubmitProp={createDiet} idPeriod={idPeriod} section={section} />
     </div>
   );
 }

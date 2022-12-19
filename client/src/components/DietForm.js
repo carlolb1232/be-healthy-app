@@ -10,17 +10,24 @@ import { simpleDelete } from '../services/simpleDelete';
 const DietForm = (props) => {
 
   const navigate = useNavigate()
-  const { onSubmitProp } = props;
+  const { onSubmitProp, idPeriod, section } = props;
 
   const [filteredFoods, setFilteredFoods] = useState();
   const [foods, setFoods] = useState();
   const [search, setSearch] = useState();
 
+
   const getFood = async () =>{
     try {
-      const response = await simpleGet(`http://localhost:8000/api/foods`)
-      console.log(response.data.foods)
-      const newFoods = response.data.foods.map((food)=>{
+      const allFoods = await simpleGet(`http://localhost:8000/api/foods`)
+      console.log(allFoods.data.foods)
+      const foodsFromPeriod = await simpleGet(`http://localhost:8000/api/foods-section/${idPeriod}/${section}`)
+      console.log(foodsFromPeriod.data.foods)
+      const foodsFromPeriodId = foodsFromPeriod.data.foods.map(food=>food._id)
+      console.log(foodsFromPeriodId)
+      const restFoods = allFoods.data.foods.filter(food=>!foodsFromPeriodId.includes(food._id))
+      console.log(restFoods)
+      const newFoods = restFoods.map((food)=>{
         let newName = food.name.toUpperCase()
         food.name = newName
         return food
@@ -90,7 +97,7 @@ const DietForm = (props) => {
                   <input className={styles.container_input} type="text" name="search" id="search" placeholder="¿Qué alimento buscas?" onChange={e=>handleChange(e)} />
                 </div>
                 <div  className={styles.container_right}>
-                  <button className={styles.btn_registroMensual} onClick={()=>navigate("/")}>Volver al registro mensual</button>
+                  <button className={styles.btn_registroMensual} onClick={()=>navigate(`/client-diet/${idPeriod}`)}>Volver al registro mensual</button>
                   <button className={styles.btn_createAlimento} onClick={()=>navigate("/create-food")}>Agregar Alimento</button>
                 </div>
               </form>
