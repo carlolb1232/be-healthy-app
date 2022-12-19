@@ -31,17 +31,20 @@
   align-items: center;
 }
 
-.btn_cerrar{
-  height: 30px;
-  padding: 3px 15px ;
+.title{
+  font-size: 20px;
+}
+.btnCerrar{
+  width: 40px;
+  height: 25px;
   background-color: #5E5CE6;
   color: white;
   border:none;
-  border-radius: 4px;
+  border-radius: 6px;
   text-align: center;
   font-size: 16px;
-  font-weight: 400;
-
+  font-weight: 600;
+  align-self: center;
 }
 
 .contenedor{
@@ -66,6 +69,11 @@
   font-size: 20px;
   font-weight: 300;
   text-align: center;
+  display: flex;
+  justify-content: end;
+  padding-right: 10px;
+  gap: 375px;
+
 }
 
 .container_card{

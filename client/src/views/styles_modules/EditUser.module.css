@@ -26,10 +26,26 @@
   align-self: center;
 }
 
+.btn_cerrar{
+  height: 30px;
+  padding: 3px 15px ;
+  background-color: #5E5CE6;
+  color: white;
+  border:none;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  align-self: flex-end;
+
+}
+
 .editUserForm{
   margin: 0 auto;
   align-items: center;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .form_contain{

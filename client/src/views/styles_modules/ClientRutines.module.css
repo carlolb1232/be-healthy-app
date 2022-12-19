@@ -7,18 +7,19 @@
 
 .containerRutina{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 1000px;
+
 
 }
 
 .container_title{
   margin: 0 auto;
   margin-bottom: 30px;
+  width: 1000px;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
-  gap: 100px
+  gap: 450px;
 }
 
 .title{
@@ -28,19 +29,7 @@
   color: #BF5AF2;
 }
 
-.btnCerrar{
-  width: 40px;
-  height: 25px;
-  background-color: #5E5CE6;
-  color: white;
-  border:none;
-  border-radius: 6px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-  align-self: center;
 
-}
 
 .container{
   background-color: #1F1F25;
@@ -84,8 +73,31 @@
   font-family: 'Inter', sans-serif;
   color: white;
   font-size: 20px;
+  display: flex;
+
 }
 
+.subtitle{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+}
+
+.btnCerrar{
+  width: 40px;
+  height: 25px;
+  background-color: #5E5CE6;
+  color: white;
+  border:none;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  align-self: center;
+  margin-top: 20px;
+  align-self: flex-end;
+}
 
 .contain_createRutine{
   margin-top: 40px;
@@ -107,6 +119,7 @@
   align-self: center;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
+  margin-top: 22px;
 }
 
 .btn_ver{
@@ -131,6 +144,7 @@
 
 .icono_trash{
   height: 16px;
+  margin-bottom: 10px;
 }
 
 img, svg {

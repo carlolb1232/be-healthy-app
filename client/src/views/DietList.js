@@ -54,13 +54,15 @@ const DietList = () => {
         :
           <div className={styles.contenedor}>
             <div className={styles.container_back}>
-              <h4>Alimentos {
+
+              <h4 className={styles.title}>Alimentos {
           section ==="shouldEat" && "recomendados"
           } {
           section ==="canEat" && "moderados"
           } {
           section ==="shouldntEat" && "restrictivos"
           }</h4>
+          <button className={styles.btnCerrar} onClick={()=>navigate(-1)}>X</button>
             </div>
             <div className={styles.container_card}>
               {

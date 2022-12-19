@@ -25,14 +25,15 @@ const CreateDiet = () => {
     <div className={styles.container}>
       <img  src={img_diet} alt="imagen de dieta nutricional" />
       <div className={styles.container_background}>
-        <h4>Alimentos {
-          section ==="shouldEat" && "recomendados" 
+        <h4 className={styles.title}>Alimentos {
+          section ==="shouldEat" && "recomendados"
           } {
-          section ==="canEat" && "moderados" 
+          section ==="canEat" && "moderados"
           } {
-          section ==="shouldntEat" && "restrictivos" 
+          section ==="shouldntEat" && "restrictivos"
           }
         </h4>
+        <button className={styles.btnCerrar} onClick={()=>navigate(-1)}>X</button>
       </div>
       <DietForm className={styles.container_DietForm} onSubmitProp={createDiet} idPeriod={idPeriod} section={section} />
     </div>

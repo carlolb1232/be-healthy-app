@@ -97,7 +97,9 @@ const ClientRutines = () => {
       <div className={styles.containerRutina}>
         <div className={styles.container_title}>
           <h3 className={styles.title}>Rutina</h3>
-          <button className={styles.btnCerrar} onClick={()=>navigate(-1)}>X</button>
+          <div className={styles.subtitle}>
+            <button className={styles.btnCerrar} onClick={()=>navigate(-1)}>X</button>
+          </div>
         </div>
       </div>
 

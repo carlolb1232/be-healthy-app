@@ -16,6 +16,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 30px;
+}
+
+.container_title{
+  display: flex;
+  gap: 251px;
+  padding-bottom: 30px;
 }
 
 .title{
@@ -29,9 +36,6 @@
   color:white;
 }
 
-.container_title{
-  display: flex;
-}
 
 .btnCerrar{
   width: 40px;
@@ -43,7 +47,7 @@
   text-align: center;
   font-size: 16px;
   font-weight: 600;
-  align-self: center;
+  align-self: flex-end;
 
 }
 

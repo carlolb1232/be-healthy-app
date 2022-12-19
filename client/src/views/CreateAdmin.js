@@ -37,6 +37,7 @@ const CreateAdmin = () => {
     <div className={styles.container_crearAdmin}>
       <img className={styles.img_crearAdmin} src={img_crearAdmin} alt="imagen de registro" />
       <div className={styles.editCrearAdminForm}>
+        <button className={styles.btn_cerrar} onClick={()=>navigate("/")}>X</button>
         {errors.map((err, index) => <div className="alert alert-danger" role="alert" key={index}>{err}</div>)}
         <RegisterForm firstName="" lastName="" email="" age="" password="" confirmPassword="" onSubmitProp={registrarUsuario} ></RegisterForm>
       </div>
