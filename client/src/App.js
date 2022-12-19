@@ -36,7 +36,7 @@ function App() {
 
           {/* CLIENT */}
           <Route path="/client-rutines/:idPeriod/:idUser" element={<ClientRutines />}></Route>
-          <Route path="/client-diet/:idPeriod" element={<ClientDiet />}></Route>
+          <Route path="/client-diet/:idPeriod/:idUser" element={<ClientDiet />}></Route>
           <Route path="/client-foods-list/:idPeriod/:section" element={<DietList />}></Route>
           {/* Esta vista es para actualizar el usuario */}
           <Route path="/user-update" element={<EditUser />} />

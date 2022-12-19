@@ -124,7 +124,7 @@ const ClientPeriods = () => {
                       }
                     </td>
                     <td><button className={styles.btn_crear} onClick={()=>navigate(`/client-rutines/${period._id}/${idUser}`)}>crear</button></td>
-                    <td><button className={styles.btn_crear} onClick={()=>navigate(`/client-diet/${period._id}`)}>crear</button></td>
+                    <td><button className={styles.btn_crear} onClick={()=>navigate(`/client-diet/${period._id}/${idUser}`)}>crear</button></td>
                     {/* CAMBIAR FUNCIONALIDAD DEL BOTON */}
                     {
                       user.rol === "admin"&&

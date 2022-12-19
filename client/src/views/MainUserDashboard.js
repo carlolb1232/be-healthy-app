@@ -85,7 +85,7 @@ const MainUserDashboard = () => {
                     <td>{period.greesepercent}</td>
                     <td>{period.calories}</td>
                     <td><button className={styles.btnVer} onClick={()=>navigate(`/client-rutines/${period._id}/${user._id}`)}>ver</button></td>
-                    <td><button className={styles.btnVer} onClick={()=>navigate(`/client-diet/${period._id}`)} >ver</button></td>
+                    <td><button className={styles.btnVer} onClick={()=>navigate(`/client-diet/${period._id}/${user._id}`)} >ver</button></td>
                   </tr>
                   )
                 })

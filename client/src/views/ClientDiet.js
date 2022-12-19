@@ -9,7 +9,7 @@ import { useUser } from "../contexts/userContext"
 
 const ClientDiet = () => {
 
-  const{idPeriod}=useParams()
+  const{idPeriod, idUser}=useParams()
   const navigate = useNavigate()
   const { user, setUser } = useUser();
 
@@ -18,7 +18,7 @@ const ClientDiet = () => {
         <img  src={img_diet} alt="imagen de dieta nutricional" />
         <div className={styles.container_title}>
           <h3>Dieta nutricional</h3>
-          <button className={styles.btnCerrar} onClick={()=>navigate(-1)}>X</button>
+          <button className={styles.btnCerrar} onClick={()=>navigate(`/client-periods/${idUser}`)}>X</button>
         </div>
       <div className={styles.containers}>
         <div className={styles.contenedor}>
