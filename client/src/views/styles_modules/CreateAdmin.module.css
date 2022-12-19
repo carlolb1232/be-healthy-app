@@ -1,34 +1,27 @@
-.container_login{
+.container_crearAdmin{
   display: flex;
   max-height: calc(100vh - 55px );
   background-color: #1F1F25;
   color:white
 }
 
-.img_login{
+.img_crearAdmin{
   overflow: hidden;
   width: 50%;
-  object-fit:cover;
+  object-fit: cover;
 }
 
-
-.container_loginForm{
-  margin: 0 auto;
-  align-items: center;
-  display: flex;
-
-}
-
-
-.btn_login{
+.btn_crearAdmmin{
   padding: 5px 20px 5px 20px ;
   background-color: #5E5CE6;
   color: white;
-  border: none  ;
+  border: none;
   border-radius: 6px;
-  align-self: center !important;
+  align-self: center;
 }
 
-.form_contain{
+.editCrearAdminForm{
   margin: 0 auto;
+  align-items: center;
+  display: flex;
 }

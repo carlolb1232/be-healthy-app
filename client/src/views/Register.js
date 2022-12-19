@@ -38,7 +38,7 @@ const Register = () => {
 
   return (
     <div className={styles.container_register}>
-      <img src={img_register} alt="imagen de registro" />
+      <img className={styles.img_register} src={img_register} alt="imagen de registro" />
       <div className={styles.container_registerForm}>
         {errors.map((err, index) => <div className="alert alert-danger" role="alert" key={index}>{err}</div>)}
         <RegisterForm firstName="" lastName="" email="" age="" password="" confirmPassword="" onSubmitProp={registrarUsuario} ></RegisterForm>

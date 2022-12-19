@@ -25,6 +25,7 @@
   color: white;
   border: 1.5px solid #BF5AF2;
   border-radius: 5px;
+  padding: 10px 0;
 }
 
 /* REGISTROS MENSUALES */
@@ -66,7 +67,7 @@
 }
 
 .icono_trash{
-  height: 18px;
+  height: 16px;
 }
 
 .btn_trash{
@@ -78,6 +79,11 @@
   align-self: center;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
+  height: 28px;
+}
+
+img, svg {
+  vertical-align: none;
 }
 
 .btn_trash:hover{

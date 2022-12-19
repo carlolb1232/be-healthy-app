@@ -60,6 +60,7 @@
   color: white;
   border: 1.5px solid #BF5AF2;
   border-radius: 5px;
+  padding: 10px 0;
 }
 
 
@@ -116,9 +117,11 @@
   border: none;
   border-radius: 6px;
   align-self: center;
+  justify-content: center;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   text-decoration: none;
+  height: 28px;
 }
 
 .btn_ver:hover{
@@ -127,7 +130,11 @@
 }
 
 .icono_trash{
-  height: 18px;
+  height: 16px;
+}
+
+img, svg {
+  vertical-align: none;
 }
 
 .btn_trash{
@@ -139,6 +146,7 @@
   align-self: center;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
+  height: 28px;
 }
 
 .btn_trash:hover{

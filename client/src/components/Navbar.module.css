@@ -6,8 +6,6 @@
   height:55px;
   display: flex;
   align-items: center;
-
-
 }
 
 .Navbar_container{
@@ -29,12 +27,27 @@
   gap: 20px;
 }
 
+
 .btn_register, .btn_login{
   background-color: #040105 ;
   padding: 2px 20px;
   color: white;
-  border: 2px solid #5E5CE6;
+  border: 1.5px solid #5E5CE6;
   border-radius: 6px;
   text-decoration: none;
+}
+
+.btn_register:hover, .btn_login:hover{
+  background-color: #5E5CE6;
+  padding: 2px 20px;
+  color: white;
+  border: 1.5px solid #5E5CE6;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.btn_register:active, .btn_login:active{
+  background-color: #5E5CE6;
+  border: 1.5px solid #5E5CE6;
 }
 

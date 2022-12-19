@@ -1,11 +1,13 @@
 import React from 'react';
 import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
-import styles from "../views/styles_modules/Register.module.css"
+import styles from "../views/styles_modules/EditUser.module.css";
+import { useNavigate } from 'react-router-dom';
 
 const EditUserForm = (props) => {
 
   const { firstName, lastName, email, age, onSubmitProp } = props;
+  const navigate = useNavigate();
 
   return (
     <div >
@@ -49,9 +51,8 @@ const EditUserForm = (props) => {
           valid,
         }) => {
           return (
-            <div>
-
-              <Form className="contact" method="post" onSubmit={handleSubmit}>
+            <div className={styles.form_contain}>
+              <Form className={styles.form_editUserForm} method="post" onSubmit={handleSubmit}>
                 <label htmlFor="firstName" className="col-sm-2 col-form-label">Nombre</label>
                 <Field id='firstName' type="text" className="form-control " placeholder="Nombre" name='firstName' />
                 {errors.firstName && touched.firstName && <p>{errors.firstName}</p>}
@@ -69,7 +70,7 @@ const EditUserForm = (props) => {
                 {errors.age && touched.age && <p>{errors.age}</p>}
 
                 <br></br>
-                <button type="submit" className={styles.btn_register} disabled={Object.values(errors).length > 0}>Actualizar</button>
+                <button type="submit" onClick={()=>navigate("/")} className={styles.btn_register} disabled={Object.values(errors).length > 0}>Actualizar</button>
               </Form>
             </div>
           );

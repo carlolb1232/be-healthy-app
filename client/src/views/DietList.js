@@ -55,11 +55,11 @@ const DietList = () => {
           <div className={styles.contenedor}>
             <div className={styles.container_back}>
               <h4>Alimentos {
-          section ==="shouldEat" && "recomendados" 
+          section ==="shouldEat" && "recomendados"
           } {
-          section ==="canEat" && "moderados" 
+          section ==="canEat" && "moderados"
           } {
-          section ==="shouldntEat" && "restrictivos" 
+          section ==="shouldntEat" && "restrictivos"
           }</h4>
             </div>
             <div className={styles.container_card}>
@@ -71,7 +71,7 @@ const DietList = () => {
                         user.rol === "admin"&&
                           <button onClick={()=>deleteFoodFromPeriod(food._id)} className={styles.btn_trash}><img className={styles.icono_trash} src={img_trash} alt="icono de eliminar" /></button>
                       }
-                      <img className={styles.img} src={food.img} alt="" />
+                      <img className={styles.img_card} src={food.img} alt="" />
                       <p className={styles.name}>{food.name[0] +food.name.substring(1).toLowerCase()}</p>
                     </div>
                   )

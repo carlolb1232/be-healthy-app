@@ -36,7 +36,7 @@ const Login = () => {
 
   return (
     <div className={styles.container_login}>
-      <img src={img_login} alt="imagen de login" />
+      <img className={styles.img_login} src={img_login} alt="imagen de login" />
       <div className={styles.container_loginForm}>
         {errors.map((err, index) => <div className={`alert alert-danger`} role="alert" key={index}>{err}</div>)}
         <LoginForm onSubmitProp={loginUsuario} ></LoginForm>

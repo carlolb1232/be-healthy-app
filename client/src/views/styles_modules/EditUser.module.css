@@ -1,28 +1,42 @@
-.container_register{
+.container_perfil{
   display: flex;
   max-height: calc(100vh - 55px );
   background-color: #1F1F25;
   color:white
 }
 
-.img_register{
+.img_editPerfil{
   overflow: hidden;
   width: 50%;
+  object-fit: cover;
 }
 
-
 .container_registerForm{
-  margin: 0 auto;
-  align-items: center;
   display: flex;
-
+  flex-direction: column;
+  justify-content: center;
 }
 
 .btn_register{
   padding: 5px 20px 5px 20px ;
   background-color: #5E5CE6;
   color: white;
-  border: none  ;
+  border: none;
   border-radius: 6px;
   align-self: center;
+}
+
+.editUserForm{
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+}
+
+.form_contain{
+  margin: 0 auto;
+}
+
+.form_editUserForm{
+  margin: 0 auto;
+
 }

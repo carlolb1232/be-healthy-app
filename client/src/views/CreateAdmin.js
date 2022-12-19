@@ -4,8 +4,8 @@ import RegisterForm from '../components/RegisterForm';
 import { simplePost } from '../services/simplePost';
 import { useUser } from "../contexts/userContext"
 import { simpleGetAuthenticated } from '../services/simpleGetAuthenticated';
-import img_register from "../assets/img_register.png"
-import styles from "./styles_modules/Register.module.css"
+import img_crearAdmin from "../assets/img_crearAdmin.png"
+import styles from "./styles_modules/CreateAdmin.module.css"
 import { simpleGet } from '../services/simpleGet';
 
 const CreateAdmin = () => {
@@ -34,9 +34,9 @@ const CreateAdmin = () => {
   }
 
   return (
-    <div className={styles.container_register}>
-      <img src={img_register} alt="imagen de registro" />
-      <div className={styles.container_registerForm}>
+    <div className={styles.container_crearAdmin}>
+      <img className={styles.img_crearAdmin} src={img_crearAdmin} alt="imagen de registro" />
+      <div className={styles.editCrearAdminForm}>
         {errors.map((err, index) => <div className="alert alert-danger" role="alert" key={index}>{err}</div>)}
         <RegisterForm firstName="" lastName="" email="" age="" password="" confirmPassword="" onSubmitProp={registrarUsuario} ></RegisterForm>
       </div>

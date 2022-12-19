@@ -37,7 +37,7 @@ const FoodForm = (props) => {
         }) => {
           return (
             <div>
-              <Form className="contact" method="post" onSubmit={handleSubmit}>
+              <Form className={styles.form_food}  method="post" onSubmit={handleSubmit}>
                 <label htmlFor="name" className="col-form-label">Nombre del alimento</label>
                 <Field id='name' type="text" placeholder="name" className={`form-control`} name='name' />
                 {errors.name && touched.name && <p>{errors.name}</p>}
