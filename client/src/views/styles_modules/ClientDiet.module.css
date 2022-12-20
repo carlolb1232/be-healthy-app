@@ -81,3 +81,16 @@ p{
 p{
   color: White;
 }
+
+.data_client{
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  color: white;
+  border: 1.5px solid #BF5AF2;
+  border-radius: 5px;
+  padding: 10px 0;
+}

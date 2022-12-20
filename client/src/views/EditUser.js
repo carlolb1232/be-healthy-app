@@ -17,6 +17,7 @@ const EditUser = () => {
       const response = await simplePut(`http://localhost:8000/api/user-profile/${user._id}`, values)
       console.log(response.data)
       setUser({...user, ...values})
+      navigate("/")
     } catch (err) {
       console.log(err)
     }

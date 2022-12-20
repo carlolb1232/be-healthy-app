@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import styles from "./styles_modules/ClientDiet.module.css"
 import img_recomendado from "../assets/Behealthy_Recomendado.png"
@@ -6,16 +6,42 @@ import img_moderado from "../assets/Behealthy_Moderado.png"
 import img_restrictivo from "../assets/Behealthy_Restrictivo.png"
 import img_diet from "../assets/img_dietaUsuario.png"
 import { useUser } from "../contexts/userContext"
+import { simpleGet } from '../services/simpleGet';
 
 const ClientDiet = () => {
 
   const{idPeriod, idUser}=useParams()
   const navigate = useNavigate()
   const { user, setUser } = useUser();
+  const [client, setClient] = useState();
+
+  const getClient = async () => {
+    try {
+      const response = await simpleGet(`http://localhost:8000/api/user/${idUser}`)
+      console.log("user", response.data)
+      setClient(response.data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
+    getClient();
+  }, []);
 
   return (
     <div className={styles.container}>
         <img  src={img_diet} alt="imagen de dieta nutricional" />
+        {
+          user.rol === "admin" &&
+            <div className={styles.data_client}>
+              <p>Nombre:{" "} {client?.firstName} {" "} {client?.lastName}</p>
+              <p>Edad:{" "}{client?.age}</p>
+              <p>Altura:{" "} {client?.height}</p>
+              <p>Peso:{" "}  {client?.weight}</p>
+              <p>IMC:{" "} {client?.imc.toFixed(2)}</p>
+            </div>
+        }
         <div className={styles.container_title}>
           <h3>Dieta nutricional</h3>
           <button className={styles.btnCerrar} onClick={()=>navigate(`/client-periods/${idUser}`)}>X</button>

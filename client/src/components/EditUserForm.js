@@ -70,7 +70,7 @@ const EditUserForm = (props) => {
                 {errors.age && touched.age && <p>{errors.age}</p>}
 
                 <br></br>
-                <button type="submit" onClick={()=>navigate("/")} className={styles.btn_register} disabled={Object.values(errors).length > 0}>Actualizar</button>
+                <button type="submit" className={styles.btn_register} disabled={Object.values(errors).length > 0}>Actualizar</button>
               </Form>
             </div>
           );

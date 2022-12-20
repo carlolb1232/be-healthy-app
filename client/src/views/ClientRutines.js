@@ -131,7 +131,7 @@ const ClientRutines = () => {
                         <td>{rutine?.excercise?.name}</td>
                         <td>{rutine?.series}</td>
                         <td>{rutine?.reps}</td>
-                        <td>{rutine?.series}</td>
+                        <td>{rutine?.rest}</td>
                         <td><a className={styles.btn_ver} href={rutine?.excercise?.link} target="_blank" rel="noreferrer">ver</a></td>
                           {/* CAMBIAR FUNCIONALIDAD DEL BOTON */}
                           {
